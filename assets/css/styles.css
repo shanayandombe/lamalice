@@ -2013,3 +2013,249 @@ p {
   visibility: visible !important;
   transform: none !important;
 }
+
+/* ==========================================================================
+   LA MALICE — DARK / UNDERGROUND COLOR UPDATE
+   À coller tout en bas de styles.css
+   ========================================================================== */
+
+:root {
+  --black: #050505;
+  --offwhite: #E8E3DC;
+  --white: #F4F1EC;
+  --grey: #8A8580;
+  --lightgrey: #242424;
+  --pink: #E83F6F;
+  --text: #E8E3DC;
+  --muted: #A9A29C;
+  --border: rgba(232, 227, 220, 0.14);
+}
+
+/* Base générale plus sombre */
+body {
+  background: #050505 !important;
+  color: #E8E3DC !important;
+}
+
+/* Sections trop blanches */
+.section,
+.section-light,
+.section--light,
+.services-section,
+.projects-section,
+.gallery-section,
+.reviews-section,
+.cta-section,
+.home-section {
+  background: #050505 !important;
+  color: #E8E3DC !important;
+}
+
+/* Alternance légèrement anthracite */
+.section-alt,
+.section--alt,
+.services,
+.projects,
+.gallery-preview,
+.home-services,
+.home-projects {
+  background: #0B0B0B !important;
+  color: #E8E3DC !important;
+}
+
+/* Fonds blancs cassés transformés en dark soft */
+.bg-offwhite,
+.bg-white,
+.bg-light {
+  background: #0B0B0B !important;
+  color: #E8E3DC !important;
+}
+
+/* Textes */
+h1,
+h2,
+h3,
+h4,
+.section-title,
+.section-heading,
+.display-title,
+.title {
+  color: #F4F1EC !important;
+}
+
+p,
+.section-text,
+.lead,
+.intro,
+.text-muted {
+  color: #BDB6AF !important;
+}
+
+/* Liens */
+a {
+  color: inherit;
+}
+
+/* Navbar plus sombre */
+.navbar,
+.site-header,
+.header {
+  background: rgba(5, 5, 5, 0.86) !important;
+  border-bottom: 1px solid rgba(232, 227, 220, 0.10) !important;
+  backdrop-filter: blur(18px);
+}
+
+.nav-link,
+.navbar a,
+.site-header a {
+  color: #E8E3DC !important;
+}
+
+.logo,
+.logo span {
+  color: #F4F1EC !important;
+}
+
+.logo .accent,
+.logo span:last-child {
+  color: #E83F6F !important;
+}
+
+/* Boutons : moins agressifs, plus éditoriaux */
+.btn,
+.button,
+.nav-cta,
+.cta-button {
+  background: transparent !important;
+  color: #F4F1EC !important;
+  border: 1px solid rgba(244, 241, 236, 0.35) !important;
+  box-shadow: none !important;
+}
+
+.btn:hover,
+.button:hover,
+.nav-cta:hover,
+.cta-button:hover {
+  background: #E83F6F !important;
+  color: #050505 !important;
+  border-color: #E83F6F !important;
+}
+
+/* Bouton principal du hero : lisible mais moins conversion */
+.hero .btn-primary,
+.hero__content .btn-primary {
+  background: #F4F1EC !important;
+  color: #050505 !important;
+  border-color: #F4F1EC !important;
+}
+
+.hero .btn-primary:hover,
+.hero__content .btn-primary:hover {
+  background: #E83F6F !important;
+  color: #050505 !important;
+  border-color: #E83F6F !important;
+}
+
+/* Cards / blocs */
+.card,
+.service-card,
+.review-card,
+.faq-item,
+.content-block,
+.info-card {
+  background: #101010 !important;
+  color: #E8E3DC !important;
+  border: 1px solid rgba(232, 227, 220, 0.12) !important;
+  box-shadow: none !important;
+}
+
+.service-card__text,
+.review-card__comment,
+.faq-item__a,
+.card p {
+  color: #BDB6AF !important;
+}
+
+/* Projets : garder les visuels forts */
+.project-card,
+.content-card,
+.masonry__item {
+  background: #0A0A0A !important;
+  border: 1px solid rgba(232, 227, 220, 0.10) !important;
+}
+
+.project-card__client,
+.content-card__title {
+  color: #F4F1EC !important;
+}
+
+.project-card__mission,
+.content-card__badge,
+.project-card__tag {
+  color: #E83F6F !important;
+}
+
+/* Filtres */
+.filter-btn {
+  background: transparent !important;
+  color: #BDB6AF !important;
+  border: 1px solid rgba(232, 227, 220, 0.18) !important;
+}
+
+.filter-btn.is-active,
+.filter-btn:hover {
+  background: #E83F6F !important;
+  color: #050505 !important;
+  border-color: #E83F6F !important;
+}
+
+/* Hero : garder un vrai contraste */
+.hero,
+.hero--photo {
+  background: #050505 !important;
+}
+
+.hero__overlay {
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.55)),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.20), rgba(5, 5, 5, 0.86)) !important;
+}
+
+/* Supprimer visuellement la banderole si elle existe encore */
+.marquee,
+.marquee__track,
+.marquee__group {
+  display: none !important;
+}
+
+/* Footer sombre */
+.footer,
+.site-footer {
+  background: #050505 !important;
+  color: #BDB6AF !important;
+  border-top: 1px solid rgba(232, 227, 220, 0.12) !important;
+}
+
+/* Formulaires */
+input,
+textarea,
+select {
+  background: #101010 !important;
+  color: #F4F1EC !important;
+  border: 1px solid rgba(232, 227, 220, 0.18) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #7D7771 !important;
+}
+
+/* Accordéons FAQ */
+.faq-item__q {
+  color: #F4F1EC !important;
+}
+
+/* Réduit les grandes zones trop vides */
+.section {
+  border-color: rgba(232, 227, 220, 0.10) !important;
+}
