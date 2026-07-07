@@ -68,22 +68,6 @@
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee">
-    <div class="marquee__track">
-      <div class="marquee__group">
-        <span class="marquee__item">Content</span><span class="marquee__dot"></span>
-        <span class="marquee__item is-pink">Social Media</span><span class="marquee__dot"></span>
-        <span class="marquee__item">Sites web</span><span class="marquee__dot"></span>
-        <span class="marquee__item">Communication</span><span class="marquee__dot"></span>
-        <span class="marquee__item is-pink">Backstage</span><span class="marquee__dot"></span>
-        <span class="marquee__item">Brand Stories</span><span class="marquee__dot"></span>
-        <span class="marquee__item">Reels</span><span class="marquee__dot"></span>
-        <span class="marquee__item is-pink">Portfolio</span><span class="marquee__dot"></span>
-      </div>
-    </div>
-  </div>
-
   <!-- SERVICES APERÇU -->
   <section class="section" id="services" style="background:var(--white)">
     <div class="container">
@@ -216,31 +200,66 @@
     document.addEventListener("DOMContentLoaded", function () {
       var container = document.getElementById("home-projects");
       if (!container) return;
-      var projects = (window.LA_MALICE_PROJECTS || []).filter(function (p) {
-        return p.visible !== false && p.featured;
-      });
-      var list = projects.length ? projects : (window.LA_MALICE_PROJECTS || []).filter(function (p) { return p.visible !== false; });
+
+      // Normalisation défensive : tolère les booléens écrits en chaîne
+      // ("true"/"false") et les "order" écrits en texte, pour ne jamais
+      // faire disparaître un projet à cause d'un type de champ inattendu.
+      function isVisible(p) {
+        var v = p && p.visible;
+        if (v === false || v === 0) return false;
+        if (typeof v === "string" && v.trim().toLowerCase() === "false") return false;
+        return true;
+      }
+      function isFeatured(p) {
+        var v = p && p.featured;
+        if (v === true || v === 1) return true;
+        if (typeof v === "string" && v.trim().toLowerCase() === "true") return true;
+        return false;
+      }
+      function getOrder(p) {
+        var raw = p && p.order;
+        var n = typeof raw === "number" ? raw : parseFloat(raw);
+        return isNaN(n) ? 9999 : n;
+      }
+      function sortByOrder(list) {
+        return list.slice().sort(function (a, b) { return getOrder(a) - getOrder(b); });
+      }
+
+      var allProjects = window.LA_MALICE_PROJECTS || [];
+      var visibleProjects = allProjects.filter(isVisible);
+
+      // 1) Projets mis en avant (featured === true), triés par order croissant.
+      var featured = sortByOrder(visibleProjects.filter(isFeatured));
+
+      // 2) Si aucun projet mis en avant, on affiche les premiers projets
+      //    visibles (toujours triés par order croissant).
+      var list = featured.length ? featured : sortByOrder(visibleProjects);
       list = list.slice(0, 4);
+
       if (!list.length) {
         container.innerHTML = '<div class="empty-state">Projet à compléter.</div>';
         return;
       }
+
       var categories = window.LA_MALICE_PROJECT_CATEGORIES || [];
       function catName(slug) {
+        // Une catégorie manquante, vide ou inexistante ne doit jamais
+        // empêcher l'affichage du projet : on retombe sur un libellé neutre.
         var c = categories.find(function (c) { return c.slug === slug; });
-        return c ? c.name : slug;
+        return (c && c.name) || "Projet";
       }
+
       list.forEach(function (project) {
         var a = document.createElement("a");
         a.className = "project-card";
         a.setAttribute("data-reveal", "");
-        a.href = "projet.html?slug=" + encodeURIComponent(project.slug);
+        a.href = "projet.html?slug=" + encodeURIComponent(project.slug || "");
         var tags = (project.tags || []).slice(0, 3).map(function (t) { return "<span>#" + t + "</span>"; }).join("");
         a.innerHTML =
-          '<img class="project-card__img" src="' + (project.main_image || "assets/images/uploads/placeholder-project.jpg") + '" alt="' + project.client + '" loading="lazy">' +
+          '<img class="project-card__img" src="' + (project.main_image || "assets/images/uploads/placeholder-project.jpg") + '" alt="' + (project.client || "") + '" loading="lazy">' +
           '<div class="project-card__overlay">' +
-          '<span class="project-card__tag">' + (catName(project.category) || "Projet") + '</span>' +
-          '<div><div class="project-card__client">' + project.client + '</div>' +
+          '<span class="project-card__tag">' + catName(project.category) + '</span>' +
+          '<div><div class="project-card__client">' + (project.client || "Projet à compléter") + '</div>' +
           '<div class="project-card__mission">' + (project.mission_type || "") + '</div>' +
           '<div class="project-card__foot"><div class="project-card__tags">' + tags + '</div>' +
           '<span class="project-card__arrow" aria-hidden="true">↗</span></div></div></div>';
