@@ -1,0 +1,68 @@
+---
+client: La Patanne
+title: La Patanne Summer Tour
+slug: la-patanne-summer-tour
+category: contenu-evenementiel
+mission_type: Community management + contenu événementiel
+status: en-cours
+project_type: community-management
+date: 2026-06-26
+role: Création de contenu, community management, stratégie éditoriale et suivi
+  des performances
+short_description: Accompagnement digital du La Patanne Summer Tour à travers la
+  création de contenus Instagram principalement, la mise en avant des festivals,
+  des produits, des coulisses et de l’ambiance du stand.
+detailed_description: >-
+  Pour La Patanne, j’accompagne la communication digitale autour de leur
+  présence sur différents festivals d’été. Mon travail consiste à créer une
+  ligne de contenu claire autour du La Patanne Summer Tour, en mettant en avant
+  les événements, les produits, les coulisses, l’ambiance du stand et les
+  moments forts de l’équipe.
+
+
+  Je m’occupe de la création de contenus pour Instagram principalement : idées de Reels, tournage sur place, sélection des plans, montage, textes à l’écran, voix off, captions, stories et visuels. L’objectif est de rendre la marque plus visible, plus vivante et plus proche de sa communauté, tout en donnant envie aux gens de venir au stand.
+
+
+  J’ai aussi mis en place une logique de suivi avec des contenus pensés par étape — Vevey, Genève, Sion puis Paléo — afin de créer une vraie narration autour du trajet de La Patanne pendant l’été. En parallèle, j’analyse les statistiques Instagram pour comprendre ce qui fonctionne, améliorer les contenus suivants et mesurer l’impact de la communication.
+context: La Patanne participe à plusieurs événements et festivals durant l’été.
+  L’enjeu est de rendre cette présence plus visible sur les réseaux sociaux, en
+  créant une communication régulière, vivante et reconnaissable autour du Summer
+  Tour.
+project_mission: Construire une ligne de contenu autour du La Patanne Summer
+  Tour, créer des contenus courts pour Instagram et TikTok, couvrir certains
+  événements sur place, mettre en avant les produits, les coulisses, l’ambiance
+  du stand et les moments forts de l’équipe.
+objectives: Renforcer la visibilité de La Patanne pendant les festivals d’été,
+  créer une narration autour du Summer Tour, donner envie aux gens de venir au
+  stand, rendre la marque plus vivante sur les réseaux et mieux comprendre les
+  contenus qui génèrent de l’engagement.
+services_done:
+  - Création de contenu
+  - Community management
+  - Reels & stories Instagram
+  - Montage vidéo
+  - Analyse des statistiques
+  - Stratégie éditoriale
+tags:
+  - festival
+  - street food
+  - community management
+  - coulisses
+  - food content
+created_content: Reels Instagram, stories, visuels d’annonce, contenus
+  coulisses, vidéos produits, contenus d’ambiance, captions, textes à l’écran et
+  voix off.
+backstage: "Le projet repose beaucoup sur la captation spontanée : moments de
+  préparation, installation du stand, produits en action, interactions avec les
+  visiteurs, ambiance des festivals et énergie de l’équipe sur place."
+main_image: /assets/images/uploads/chatgpt_image_jun_25__2026__01_01_23_pm-removebg-preview.webp
+gallery:
+  - image: /assets/images/uploads/1.webp
+  - image: /assets/images/uploads/chatgpt-image-jun-26-2026-09_07_31-pm.webp
+  - image: /assets/images/uploads/img_0839.webp
+video_link: https://www.instagram.com/p/DaNNkaCsHxw/
+external_link: https://www.instagram.com/la_patanne/
+featured: true
+visible: true
+order: 1
+---
