@@ -80,7 +80,7 @@ collections:
         name: "gallery"
         widget: "list"
         required: false
-        field:
+        fields:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Texte alternatif", name: "alt", widget: "string", required: false }
       - { label: "Vidéo / lien Reel-TikTok-Instagram", name: "video_link", widget: "string", required: false }
@@ -311,7 +311,7 @@ collections:
             name: "gallery_images"
             widget: "list"
             required: false
-            field:
+            fields:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Texte alternatif", name: "alt", widget: "string", required: false }
           - { label: "Titre — Ce que la danse m'a appris", name: "learned_title", widget: "string", required: false }
@@ -319,14 +319,14 @@ collections:
             name: "learned_blocks"
             widget: "list"
             required: false
-            field:
+            fields:
               - { label: "Titre du bloc", name: "title", widget: "string" }
               - { label: "Texte du bloc", name: "text", widget: "text" }
           - label: "Timeline artistique & professionnelle"
             name: "timeline"
             widget: "list"
             required: false
-            field:
+            fields:
               - { label: "Libellé", name: "label", widget: "string" }
               - { label: "Tag (ex: DANSE / PRO)", name: "tag", widget: "string", required: false }
           - { label: "Afficher la section danse", name: "show_dance_section", widget: "boolean", default: true }
