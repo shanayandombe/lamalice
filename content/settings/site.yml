@@ -1,32 +1,35 @@
-site_name: "La Malice"
-slogan: "Contenu, sites web & communication pour les projets qui veulent se montrer autrement."
-baseline: "Je rends les projets plus visibles, plus vivants et moins boring."
-email: "contact@lamalice.ch"
+site_name: La Malice
+slogan: Contenu, sites web & communication pour les projets qui veulent se
+  montrer autrement.
+baseline: Je rends les projets plus visibles, plus vivants et moins boring.
+email: ndombeshanaya@gmail.com
 phone: ""
-instagram_url: "https://www.instagram.com/lamalice.ch/"
+instagram_url: https://www.instagram.com/lamalice.ch/
 tiktok_url: ""
-linkedin_url: ""
-
-hero_text: "Je crée du contenu, des sites et des univers digitaux pour aider les marques, événements et indépendants à mieux se montrer, mieux raconter ce qu'ils font et créer une présence qui marque."
-hero_button_text: "Voir les projets"
-hero_button_link: "projets.html"
-hero_button_secondary_text: "Travailler ensemble"
-hero_button_secondary_link: "contact.html"
-
-banner_message: "Nouveaux projets disponibles pour l'automne — écris-moi."
+linkedin_url: https://www.linkedin.com/in/shanaya-ndombe/
+hero_text: Je crée du contenu, des sites web et des univers digitaux pour aider
+  les projets à mieux se montrer, raconter des histoires qui marquent et
+  construire une présence plus claire, vivante et mémorable.
+hero_button_text: Voir les projets
+hero_button_link: projets.html
+hero_button_secondary_text: Travailler ensemble
+hero_button_secondary_link: contact.html
+banner_message: Nouveaux projets disponibles pour l'automne - écris-moi.
 banner_show: false
-
-footer_text: "La Malice — Contenu, communication & sites web pensés avec intention."
-
-seo_title_home: "La Malice — Contenu, sites web & communication créative | Suisse romande"
-seo_description_home: "La Malice est un studio créatif personnel spécialisé en création de contenu, community management, sites web et communication digitale pour marques, événements et indépendants en Suisse romande."
-og_image: "/assets/images/uploads/og-default.jpg"
-
+footer_text: La Malice — Mon regard créatif au service de projets qui veulent se
+  montrer autrement.
+seo_title_home: La Malice — Contenu, sites web & communication créative | Suisse romande
+seo_description_home: La Malice, c’est mon univers créatif autour de la création
+  de contenu, de la communication digitale, des sites web et des projets visuels
+  pour marques, événements et indépendants en Suisse romande.
+og_image: /assets/images/uploads/og-default.jpg
 form_email_display: true
-success_message: "Merci, ton message est bien arrivé. Je te réponds bientôt avec toute la malice nécessaire."
-
-nav_label_projects: "Projets"
-nav_label_gallery: "Galerie"
-nav_label_about: "À propos"
-nav_label_contact: "Contact"
-nav_cta_text: "Travailler ensemble"
+success_message: |-
+  Merci, votre message est bien arrivé. Je vous réponds au plus vite !
+  Malicieusement vôtre,
+  Shanaya
+nav_label_projects: Projets
+nav_label_gallery: Galerie
+nav_label_about: À propos
+nav_label_contact: Contact
+nav_cta_text: Travailler ensemble
