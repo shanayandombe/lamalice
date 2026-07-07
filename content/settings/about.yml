@@ -1,56 +1,62 @@
-title: "Le mouvement avant le digital."
-subtitle: "Danser m'a appris à créer avec le corps, le regard, le rythme et l'intention. Aujourd'hui, je mets cette même énergie dans les projets que j'accompagne."
-
-intro_text: "Avant même de créer des sites ou du contenu, il y avait le mouvement. La danse a façonné ma manière de voir les choses : le rythme, l'espace, la présence, l'émotion, le détail qu'on remarque sans forcément savoir pourquoi. Être danseuse m'a appris à me montrer, à prendre place, à m'exprimer devant les autres et à assumer une intention. Aujourd'hui, cette énergie se retrouve dans La Malice : je crée des contenus, des sites et des univers digitaux qui ne sont pas seulement beaux, mais vivants, incarnés et pensés pour marquer."
-
-dance_text: "La danse m'a appris que ce qu'on montre compte autant que la manière dont on le montre. Un geste, un regard, une coupe, un rythme, un silence : tout peut raconter quelque chose. C'est cette sensibilité que j'amène dans mes projets de communication, de contenu et de site web."
-
-career_text: "À côté de mon parcours artistique, je poursuis un Bachelor en Management à HEC Lausanne et je me suis formée à travers plusieurs expériences en marketing, communication, social media et gestion de projets. Cette double casquette me permet de créer avec intuition, mais aussi avec structure : comprendre un besoin, clarifier un message, penser une stratégie simple et construire une présence digitale cohérente."
-
-structure_title: "Entre instinct créatif et structure"
-structure_text: "La Malice mélange sensibilité artistique, expérience de terrain, communication digitale, stratégie, création de contenu, design web et événementiel."
-
-portrait_image: "/assets/images/uploads/placeholder-portrait.jpg"
-
+title: Le mouvement avant le digital.
+subtitle: Danser m'a appris à créer avec le corps, le regard, le rythme et
+  l'intention. Aujourd'hui, je mets cette même énergie dans les projets que
+  j'accompagne.
+intro_text: "Avant même de créer des sites ou du contenu, il y avait le
+  mouvement. La danse a façonné ma manière de voir les choses : le rythme,
+  l'espace, la présence, l'émotion, le détail qu'on remarque sans forcément
+  savoir pourquoi. Être danseuse m'a appris à me montrer, à prendre place, à
+  m'exprimer devant les autres et à assumer une intention. Aujourd'hui, cette
+  énergie se retrouve dans La Malice : je crée des contenus, des sites et des
+  univers digitaux qui ne sont pas seulement beaux, mais vivants, incarnés et
+  pensés pour marquer."
+dance_text: "La danse m'a appris que ce qu'on montre compte autant que la
+  manière dont on le montre. Un geste, un regard, une coupe, un rythme, un
+  silence : tout peut se raconter, tout peut se ressentir. C'est cette
+  sensibilité que je cherche à retranscrire dans mes projets."
+career_text: "À côté de mon parcours artistique, j'ai suivi un Bachelor en
+  Management à HEC Lausanne et je me suis formée à travers plusieurs expériences
+  en marketing, communication, social media et gestion de projets. Cette double
+  casquette m'a permis de créer avec intuition, mais aussi avec structure :
+  comprendre un besoin, clarifier un message, penser une stratégie simple et
+  construire une présence digitale cohérente."
+structure_title: Entre instinct créatif et structure
+structure_text: La Malice mélange ma sensibilité artistique avec expérience de
+  terrain, communication digitale, stratégie, création de contenu, design web et
+  événementiel.
+portrait_image: /assets/images/uploads/placeholder-portrait.jpg
 gallery_images:
-  - image: "/assets/images/uploads/placeholder-1.jpg"
-    alt: "Image à remplacer"
-  - image: "/assets/images/uploads/placeholder-2.jpg"
-    alt: "Image à remplacer"
-  - image: "/assets/images/uploads/placeholder-3.jpg"
-    alt: "Image à remplacer"
-
-learned_title: "Ce que la danse a changé dans ma manière de créer"
+  - image: /assets/images/uploads/placeholder-1.jpg
+    alt: Image à remplacer
+  - image: /assets/images/uploads/placeholder-2.jpg
+    alt: Image à remplacer
+  - image: /assets/images/uploads/placeholder-3.jpg
+    alt: Image à remplacer
+learned_title: Ce que la danse a changé dans ma manière de créer
 learned_blocks:
-  - title: "Rythme"
-    text: "Penser le montage, les transitions, les formats courts."
-  - title: "Présence"
-    text: "Aider les projets à assumer leur image."
-  - title: "Émotion"
-    text: "Créer du contenu qui transmet quelque chose."
-  - title: "Scène"
-    text: "Comprendre l'importance de capter l'attention."
-  - title: "Identité"
-    text: "Transformer une activité en univers reconnaissable."
-
+  - title: Rythme
+    text: Penser le montage, les transitions, les formats courts.
+  - title: Présence
+    text: Aider les projets à assumer leur image.
+  - title: Émotion
+    text: Créer du contenu qui transmet quelque chose.
+  - title: Scène
+    text: Comprendre l'importance de capter l'attention.
+  - title: Identité
+    text: Transformer une activité en univers reconnaissable.
 timeline:
-  - label: "Danseuse Hip-Hop / House"
-    tag: "DANSE"
-  - label: "Enseignante de danse"
-    tag: "DANSE"
-  - label: "Battles & scène"
-    tag: "DANSE"
-  - label: "Marketing & communication"
-    tag: "PRO"
-  - label: "Community management"
-    tag: "PRO"
-  - label: "Création de contenu"
-    tag: "PRO"
-  - label: "Sites web"
-    tag: "PRO"
-  - label: "Événementiel"
-    tag: "PRO"
-
+  - label: Danseuse Hip-Hop
+    tag: DANSE
+  - label: Enseignante de danse
+    tag: DANSE
+  - label: Marketing & communication
+    tag: PRO
+  - label: Sites web
+    tag: PRO
+  - label: Community management & Création de contenu
+    tag: PRO
+  - label: Événementiel
+    tag: PRO
 show_dance_section: true
 show_career_section: true
 show_timeline: true
