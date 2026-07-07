@@ -32,7 +32,6 @@
     initMobileMenu();
     setActiveNavLink();
     applySettingsToDom();
-    initMarquee();
     initReveal();
     initHeroWordRotate();
     initFaqAccordion();
@@ -238,19 +237,6 @@
     qsa("[data-settings-footer-text]").forEach((n) => {
       n.textContent = s.footer_text || "";
     });
-  }
-
-  // ---------------------------------------------------------------
-  // Marquee (bandeau animé)
-  // ---------------------------------------------------------------
-
-  function initMarquee() {
-    const track = qs(".marquee__track");
-    if (!track) return;
-    const group = qs(".marquee__group", track);
-    if (group && !qs(".marquee__group + .marquee__group", track)) {
-      track.appendChild(group.cloneNode(true));
-    }
   }
 
   // ---------------------------------------------------------------
