@@ -1865,22 +1865,302 @@ p {
 .mt-lg { margin-top: clamp(32px, 5vw, 60px); }
 .hidden { display: none !important; }
 
+
 /* ==========================================================================
-   FIX — projets invisibles mais cliquables
+   LA MALICE — CLEAN FINAL OVERRIDES
+   Balance blanc pur / noir underground + éléments dynamiques visibles
    ========================================================================== */
+
+:root {
+  --black: #050505;
+  --offwhite: #ffffff;
+  --white: #ffffff;
+  --grey: #777777;
+  --lightgrey: #e8e8e8;
+  --pink: #e83f6f;
+  --text: #050505;
+  --muted: #333333;
+  --border: rgba(5, 5, 5, 0.14);
+}
+
+body {
+  background: #ffffff !important;
+  color: #050505 !important;
+}
+
+/* Toutes les sections normales repassent en blanc pur */
+.section,
+.section--grain,
+.section-light,
+.section--light,
+.bg-white,
+.bg-offwhite,
+.services-section,
+.home-services,
+.projects-section,
+.home-projects,
+.gallery-section,
+.home-gallery,
+.gallery-preview,
+.reviews-section,
+.faq-section,
+.contact-section,
+.cta-section,
+.home-section {
+  background: #ffffff !important;
+  color: #050505 !important;
+}
+
+.section h1,
+.section h2,
+.section h3,
+.section h4,
+.section-title,
+.section-heading,
+.display-title,
+.title,
+.service-card__title,
+.review-card__name,
+.faq-item__q,
+.learned-card__title,
+.timeline-item__label {
+  color: #050505 !important;
+}
+
+.section p,
+.section-sub,
+.section-text,
+.section-subtitle,
+.lead,
+.intro,
+.text-muted,
+.service-card__text,
+.review-card__comment,
+.faq-item__a,
+.learned-card__text,
+.project-body__block p,
+.project-hero__mission {
+  color: #333333 !important;
+}
+
+/* Zones qui doivent rester sombres */
+.hero,
+.hero--photo,
+.section--photo,
+.section--grain-dark,
+.footer,
+.site-footer,
+.dark-section {
+  background: #050505 !important;
+  color: #ffffff !important;
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p,
+.hero .tag,
+.hero .hero__lede,
+.section--photo h1,
+.section--photo h2,
+.section--photo h3,
+.section--photo p,
+.section--grain-dark h1,
+.section--grain-dark h2,
+.section--grain-dark h3,
+.section--grain-dark p,
+.footer,
+.footer p,
+.footer a,
+.site-footer,
+.site-footer p,
+.site-footer a {
+  color: #ffffff !important;
+}
+
+/* La photo du hero redevient visible : overlay moins bouché */
+.hero__bg-img {
+  filter: grayscale(1) contrast(1.08) brightness(0.92) !important;
+  opacity: 1 !important;
+  object-position: center 24% !important;
+}
+
+.hero__overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 5, 5, 0.76) 0%,
+      rgba(5, 5, 5, 0.54) 38%,
+      rgba(5, 5, 5, 0.22) 68%,
+      rgba(5, 5, 5, 0.36) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(5, 5, 5, 0.06) 0%,
+      rgba(5, 5, 5, 0.42) 82%,
+      rgba(5, 5, 5, 0.62) 100%
+    ) !important;
+}
+
+/* Sections photo : moins sombres aussi */
+.section-photo-bg img {
+  filter: grayscale(1) contrast(1.05) brightness(0.82) !important;
+  object-position: center center !important;
+}
+
+.section-photo-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(5, 5, 5, 0.42) 0%,
+    rgba(5, 5, 5, 0.66) 100%
+  ) !important;
+}
+
+/* Navbar : noire, sobre, cohérente avec le hero */
+.navbar,
+.site-header,
+.header {
+  background: rgba(5, 5, 5, 0.92) !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+  backdrop-filter: blur(18px);
+}
+
+.navbar.is-scrolled {
+  background: rgba(5, 5, 5, 0.96) !important;
+}
+
+.nav-link,
+.navbar a,
+.site-header a,
+.header a,
+.nav-logo {
+  color: #ffffff !important;
+}
+
+.nav-logo span,
+.logo .accent,
+.logo span:last-child {
+  color: #e83f6f !important;
+}
+
+.nav-toggle span {
+  background: #ffffff !important;
+}
+
+/* Boutons plus sobres */
+.btn,
+.button,
+.nav-cta,
+.cta-button {
+  background: transparent !important;
+  color: #050505 !important;
+  border: 1px solid rgba(5, 5, 5, 0.28) !important;
+  box-shadow: none !important;
+}
+
+.btn:hover,
+.button:hover,
+.nav-cta:hover,
+.cta-button:hover {
+  background: #e83f6f !important;
+  color: #050505 !important;
+  border-color: #e83f6f !important;
+  transform: none !important;
+}
+
+.hero .btn,
+.hero .button,
+.hero__content .btn,
+.section--photo .btn,
+.section--grain-dark .btn,
+.footer .btn,
+.site-footer .btn,
+.navbar .nav-cta {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.42) !important;
+}
+
+.hero .btn:not(.btn--ghost),
+.hero__content .btn:not(.btn--ghost) {
+  background: #ffffff !important;
+  color: #050505 !important;
+  border-color: #ffffff !important;
+}
+
+.hero .btn:hover,
+.hero__content .btn:hover,
+.section--photo .btn:hover,
+.section--grain-dark .btn:hover,
+.navbar .nav-cta:hover {
+  background: #e83f6f !important;
+  color: #050505 !important;
+  border-color: #e83f6f !important;
+}
+
+/* Cards sur sections blanches */
+.service-card,
+.review-card,
+.faq-item,
+.contact-card,
+.info-card,
+.card,
+.learned-card,
+.form-success {
+  background: #ffffff !important;
+  color: #050505 !important;
+  border: 1px solid rgba(5, 5, 5, 0.14) !important;
+  box-shadow: none !important;
+}
+
+.services-grid,
+.learned-grid {
+  background: rgba(5, 5, 5, 0.14) !important;
+  border-color: rgba(5, 5, 5, 0.14) !important;
+}
+
+/* Le reveal ne doit plus cacher les éléments créés dynamiquement */
+[data-reveal],
+[data-reveal].is-visible,
+.project-card[data-reveal],
+.content-card[data-reveal],
+.masonry__item[data-reveal],
+.service-card[data-reveal],
+.review-card[data-reveal] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+[data-reveal="stagger"] > *,
+[data-reveal="stagger"].is-visible > * {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Projets : visibles, mais moins bouchés et moins monumentaux */
+.projects-grid,
+[data-projects-grid] {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+}
 
 .project-card {
   position: relative !important;
   display: block !important;
-  min-height: 420px !important;
+  min-height: 360px !important;
+  aspect-ratio: 4 / 3.1 !important;
   overflow: hidden !important;
-  border-radius: 28px !important;
-  background: #0D0D0D !important;
-  color: #F4F1EC !important;
+  border-radius: 24px !important;
+  background: #050505 !important;
+  color: #ffffff !important;
   text-decoration: none !important;
   opacity: 1 !important;
   visibility: visible !important;
   transform: none !important;
+  border: 1px solid rgba(5, 5, 5, 0.10) !important;
 }
 
 .project-card__img {
@@ -1889,11 +2169,13 @@ p {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+  object-position: center center !important;
   display: block !important;
-  opacity: 0.72 !important;
+  opacity: 0.92 !important;
   visibility: visible !important;
-  filter: grayscale(1) contrast(1.08) !important;
+  filter: grayscale(1) contrast(1.04) brightness(0.90) !important;
   z-index: 1 !important;
+  transform: none !important;
 }
 
 .project-card::after {
@@ -1903,9 +2185,9 @@ p {
   background:
     linear-gradient(
       180deg,
-      rgba(13, 13, 13, 0.12) 0%,
-      rgba(13, 13, 13, 0.45) 45%,
-      rgba(13, 13, 13, 0.88) 100%
+      rgba(5, 5, 5, 0.00) 0%,
+      rgba(5, 5, 5, 0.20) 48%,
+      rgba(5, 5, 5, 0.72) 100%
     ) !important;
   z-index: 2 !important;
   pointer-events: none !important;
@@ -1918,10 +2200,10 @@ p {
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
-  padding: clamp(1.4rem, 3vw, 2.5rem) !important;
+  padding: clamp(1.2rem, 2.4vw, 2rem) !important;
+  color: #ffffff !important;
   opacity: 1 !important;
   visibility: visible !important;
-  color: #F4F1EC !important;
   pointer-events: none !important;
 }
 
@@ -1929,36 +2211,37 @@ p {
   align-self: flex-start !important;
   display: inline-flex !important;
   width: fit-content !important;
-  padding: 0.45rem 0.8rem !important;
-  border: 1px solid rgba(244, 241, 236, 0.45) !important;
+  padding: 0.42rem 0.75rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.48) !important;
   border-radius: 999px !important;
-  color: #F4F1EC !important;
-  background: rgba(13, 13, 13, 0.45) !important;
-  font-family: "Space Mono", monospace !important;
-  font-size: 0.72rem !important;
+  color: #ffffff !important;
+  background: rgba(5, 5, 5, 0.32) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.70rem !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
 }
 
 .project-card__client {
   display: block !important;
-  color: #F4F1EC !important;
-  font-family: "Anton", sans-serif !important;
-  font-size: clamp(3rem, 7vw, 7rem) !important;
-  line-height: 0.88 !important;
+  color: #ffffff !important;
+  font-family: var(--font-display) !important;
+  font-size: clamp(2.3rem, 4.6vw, 4.8rem) !important;
+  line-height: 0.92 !important;
   text-transform: uppercase !important;
-  letter-spacing: -0.03em !important;
+  letter-spacing: -0.02em !important;
   opacity: 1 !important;
   visibility: visible !important;
 }
 
 .project-card__mission {
-  margin-top: 0.5rem !important;
-  color: #E83F6F !important;
-  font-family: "Anton", sans-serif !important;
-  font-size: clamp(1.1rem, 2.3vw, 2rem) !important;
-  line-height: 0.95 !important;
-  text-transform: uppercase !important;
+  margin-top: 0.45rem !important;
+  color: #e83f6f !important;
+  font-family: var(--font-body) !important;
+  font-weight: 800 !important;
+  font-size: clamp(0.95rem, 1.6vw, 1.25rem) !important;
+  line-height: 1.1 !important;
+  text-transform: none !important;
   opacity: 1 !important;
   visibility: visible !important;
 }
@@ -1968,425 +2251,311 @@ p {
   align-items: flex-end !important;
   justify-content: space-between !important;
   gap: 1rem !important;
-  margin-top: 1.2rem !important;
+  margin-top: 1rem !important;
 }
 
 .project-card__tags {
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: 0.45rem !important;
+  gap: 0.4rem !important;
 }
 
 .project-card__tags span {
-  color: #F4F1EC !important;
-  font-family: "Space Mono", monospace !important;
-  font-size: 0.7rem !important;
-  opacity: 0.85 !important;
+  color: #ffffff !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.68rem !important;
+  opacity: 0.84 !important;
 }
 
 .project-card__arrow {
   display: grid !important;
   place-items: center !important;
-  width: 58px !important;
-  height: 58px !important;
+  width: 48px !important;
+  height: 48px !important;
   border-radius: 999px !important;
-  background: #F4F1EC !important;
-  color: #0D0D0D !important;
-  font-size: 1.5rem !important;
+  background: #ffffff !important;
+  color: #050505 !important;
+  font-size: 1.25rem !important;
   flex: 0 0 auto !important;
+  transform: none !important;
+}
+
+.project-card:hover {
+  transform: none !important;
 }
 
 .project-card:hover .project-card__img {
-  opacity: 0.9 !important;
-  transform: scale(1.04) !important;
+  opacity: 1 !important;
+  filter: grayscale(0.75) contrast(1.06) brightness(0.96) !important;
+  transform: scale(1.012) !important;
 }
 
 .project-card:hover .project-card__arrow {
-  background: #E83F6F !important;
-  color: #F4F1EC !important;
+  background: #e83f6f !important;
+  color: #050505 !important;
+  transform: none !important;
 }
 
-/* Si les animations reveal bloquent les cards */
-.project-card[data-reveal],
-.projects-grid [data-reveal] {
+/* Contenus : visibles */
+.contents-grid,
+[data-contents-grid] {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+.content-card {
+  position: relative !important;
+  display: block !important;
+  min-height: 320px !important;
+  aspect-ratio: 9 / 14 !important;
+  overflow: hidden !important;
+  border-radius: 22px !important;
+  background: #050505 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
   opacity: 1 !important;
   visibility: visible !important;
   transform: none !important;
 }
 
-/* ==========================================================================
-   LA MALICE — DARK / UNDERGROUND COLOR UPDATE
-   À coller tout en bas de styles.css
-   ========================================================================== */
-
-:root {
-  --black: #050505;
-  --offwhite: #E8E3DC;
-  --white: #F4F1EC;
-  --grey: #8A8580;
-  --lightgrey: #242424;
-  --pink: #E83F6F;
-  --text: #E8E3DC;
-  --muted: #A9A29C;
-  --border: rgba(232, 227, 220, 0.14);
+.content-card__img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+  opacity: 0.94 !important;
+  filter: grayscale(1) contrast(1.04) brightness(0.88) !important;
+  z-index: 1 !important;
+  transform: none !important;
 }
 
-/* Base générale plus sombre */
-body {
-  background: #050505 !important;
-  color: #E8E3DC !important;
-}
-
-/* Sections trop blanches */
-.section,
-.section-light,
-.section--light,
-.services-section,
-.projects-section,
-.gallery-section,
-.reviews-section,
-.cta-section,
-.home-section {
-  background: #050505 !important;
-  color: #E8E3DC !important;
-}
-
-/* Alternance légèrement anthracite */
-.section-alt,
-.section--alt,
-.services,
-.projects,
-.gallery-preview,
-.home-services,
-.home-projects {
-  background: #0B0B0B !important;
-  color: #E8E3DC !important;
-}
-
-/* Fonds blancs cassés transformés en dark soft */
-.bg-offwhite,
-.bg-white,
-.bg-light {
-  background: #0B0B0B !important;
-  color: #E8E3DC !important;
-}
-
-/* Textes */
-h1,
-h2,
-h3,
-h4,
-.section-title,
-.section-heading,
-.display-title,
-.title {
-  color: #F4F1EC !important;
-}
-
-p,
-.section-text,
-.lead,
-.intro,
-.text-muted {
-  color: #BDB6AF !important;
-}
-
-/* Liens */
-a {
-  color: inherit;
-}
-
-/* Navbar plus sombre */
-.navbar,
-.site-header,
-.header {
-  background: rgba(5, 5, 5, 0.86) !important;
-  border-bottom: 1px solid rgba(232, 227, 220, 0.10) !important;
-  backdrop-filter: blur(18px);
-}
-
-.nav-link,
-.navbar a,
-.site-header a {
-  color: #E8E3DC !important;
-}
-
-.logo,
-.logo span {
-  color: #F4F1EC !important;
-}
-
-.logo .accent,
-.logo span:last-child {
-  color: #E83F6F !important;
-}
-
-/* Boutons : moins agressifs, plus éditoriaux */
-.btn,
-.button,
-.nav-cta,
-.cta-button {
-  background: transparent !important;
-  color: #F4F1EC !important;
-  border: 1px solid rgba(244, 241, 236, 0.35) !important;
-  box-shadow: none !important;
-}
-
-.btn:hover,
-.button:hover,
-.nav-cta:hover,
-.cta-button:hover {
-  background: #E83F6F !important;
-  color: #050505 !important;
-  border-color: #E83F6F !important;
-}
-
-/* Bouton principal du hero : lisible mais moins conversion */
-.hero .btn-primary,
-.hero__content .btn-primary {
-  background: #F4F1EC !important;
-  color: #050505 !important;
-  border-color: #F4F1EC !important;
-}
-
-.hero .btn-primary:hover,
-.hero__content .btn-primary:hover {
-  background: #E83F6F !important;
-  color: #050505 !important;
-  border-color: #E83F6F !important;
-}
-
-/* Cards / blocs */
-.card,
-.service-card,
-.review-card,
-.faq-item,
-.content-block,
-.info-card {
-  background: #101010 !important;
-  color: #E8E3DC !important;
-  border: 1px solid rgba(232, 227, 220, 0.12) !important;
-  box-shadow: none !important;
-}
-
-.service-card__text,
-.review-card__comment,
-.faq-item__a,
-.card p {
-  color: #BDB6AF !important;
-}
-
-/* Projets : garder les visuels forts */
-.project-card,
-.content-card,
-.masonry__item {
-  background: #0A0A0A !important;
-  border: 1px solid rgba(232, 227, 220, 0.10) !important;
-}
-
-.project-card__client,
-.content-card__title {
-  color: #F4F1EC !important;
-}
-
-.project-card__mission,
-.content-card__badge,
-.project-card__tag {
-  color: #E83F6F !important;
-}
-
-/* Filtres */
-.filter-btn {
-  background: transparent !important;
-  color: #BDB6AF !important;
-  border: 1px solid rgba(232, 227, 220, 0.18) !important;
-}
-
-.filter-btn.is-active,
-.filter-btn:hover {
-  background: #E83F6F !important;
-  color: #050505 !important;
-  border-color: #E83F6F !important;
-}
-
-/* Hero : garder un vrai contraste */
-.hero,
-.hero--photo {
-  background: #050505 !important;
-}
-
-.hero__overlay {
+.content-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
   background:
-    linear-gradient(90deg, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.55)),
-    linear-gradient(180deg, rgba(5, 5, 5, 0.20), rgba(5, 5, 5, 0.86)) !important;
+    linear-gradient(
+      180deg,
+      rgba(5, 5, 5, 0.00) 0%,
+      rgba(5, 5, 5, 0.26) 56%,
+      rgba(5, 5, 5, 0.78) 100%
+    ) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
 }
 
-/* Supprimer visuellement la banderole si elle existe encore */
+.content-card__badge,
+.content-card__play,
+.content-card__info {
+  position: absolute !important;
+  z-index: 3 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.content-card__badge {
+  top: 1rem !important;
+  left: 1rem !important;
+  padding: 0.4rem 0.72rem !important;
+  border-radius: 999px !important;
+  background: rgba(5, 5, 5, 0.36) !important;
+  color: #ffffff !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.68rem !important;
+  text-transform: uppercase !important;
+}
+
+.content-card__play {
+  top: 1rem !important;
+  right: 1rem !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  color: #050505 !important;
+}
+
+.content-card__info {
+  left: 1rem !important;
+  right: 1rem !important;
+  bottom: 1rem !important;
+  color: #ffffff !important;
+}
+
+.content-card__client {
+  color: #e83f6f !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase !important;
+}
+
+.content-card__title {
+  margin-top: 0.35rem !important;
+  color: #ffffff !important;
+  font-family: var(--font-body) !important;
+  font-weight: 800 !important;
+  font-size: clamp(1rem, 1.8vw, 1.35rem) !important;
+  line-height: 1.15 !important;
+  text-transform: none !important;
+}
+
+.content-card:hover .content-card__img {
+  filter: grayscale(0.75) contrast(1.06) brightness(0.95) !important;
+  transform: scale(1.012) !important;
+}
+
+/* Galerie : retour au vrai masonry, visible, sans gros offsets */
+.masonry {
+  columns: 3 240px !important;
+  column-gap: 18px !important;
+  display: block !important;
+}
+
+[data-gallery-grid],
+[data-gallery-preview],
+[data-about-gallery] {
+  display: block !important;
+}
+
+.masonry__item {
+  position: relative !important;
+  display: block !important;
+  break-inside: avoid !important;
+  margin: 0 0 18px 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  border-radius: 20px !important;
+  background: #050505 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  cursor: pointer !important;
+}
+
+.masonry__item img {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: grayscale(1) contrast(1.04) brightness(0.94) !important;
+  transform: none !important;
+}
+
+.masonry__item:hover img {
+  filter: grayscale(0.6) contrast(1.06) brightness(1) !important;
+  transform: scale(1.012) !important;
+}
+
+.masonry__caption {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 3 !important;
+  padding: 1rem !important;
+  color: #ffffff !important;
+  background: linear-gradient(180deg, rgba(5,5,5,0) 0%, rgba(5,5,5,0.72) 100%) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Suppression réelle de la banderole si elle est encore dans le HTML */
 .marquee,
 .marquee__track,
 .marquee__group {
   display: none !important;
 }
 
-/* Footer sombre */
-.footer,
-.site-footer {
-  background: #050505 !important;
-  color: #BDB6AF !important;
-  border-top: 1px solid rgba(232, 227, 220, 0.12) !important;
+/* Filtres sur fond blanc */
+.filter-btn {
+  background: transparent !important;
+  color: #050505 !important;
+  border: 1px solid rgba(5, 5, 5, 0.24) !important;
+}
+
+.filter-btn.is-active,
+.filter-btn:hover {
+  background: #e83f6f !important;
+  color: #050505 !important;
+  border-color: #e83f6f !important;
 }
 
 /* Formulaires */
 input,
 textarea,
-select {
-  background: #101010 !important;
-  color: #F4F1EC !important;
-  border: 1px solid rgba(232, 227, 220, 0.18) !important;
+select,
+.field input,
+.field select,
+.field textarea {
+  background: #ffffff !important;
+  color: #050505 !important;
+  border-color: rgba(5, 5, 5, 0.22) !important;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: #7D7771 !important;
+  color: #777777 !important;
 }
 
-/* Accordéons FAQ */
-.faq-item__q {
-  color: #F4F1EC !important;
+/* Annule les offsets alternés partout */
+.project-card:nth-child(even),
+.project-card:nth-child(odd),
+.content-card:nth-child(even),
+.content-card:nth-child(odd),
+.masonry__item:nth-child(even),
+.masonry__item:nth-child(odd),
+.service-card:nth-child(even),
+.service-card:nth-child(odd) {
+  transform: none !important;
+  margin-top: 0 !important;
 }
 
-/* Réduit les grandes zones trop vides */
-.section {
-  border-color: rgba(232, 227, 220, 0.10) !important;
+/* Responsive */
+@media (max-width: 900px) {
+  .projects-grid,
+  [data-projects-grid] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contents-grid,
+  [data-contents-grid] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
 }
 
-/* ==========================================================================
-   LA MALICE — WHITE SECTIONS PURE WHITE
-   À coller tout en bas de styles.css
-   ========================================================================== */
+@media (max-width: 700px) {
+  .masonry {
+    columns: 2 160px !important;
+  }
 
-/* Sections en blanc pur */
-.services-section,
-.home-services,
-.projects-section,
-.home-projects,
-.reviews-section,
-.faq-section,
-.contact-section,
-.section-light,
-.section--light,
-.bg-white,
-.bg-offwhite {
-  background: #FFFFFF !important;
-  color: #050505 !important;
+  .project-card,
+  .content-card {
+    min-height: 300px !important;
+  }
+
+  .hero__bg-img {
+    object-position: center 28% !important;
+  }
 }
 
-/* Textes sur sections blanches */
-.services-section h1,
-.services-section h2,
-.services-section h3,
-.home-services h1,
-.home-services h2,
-.home-services h3,
-.projects-section h1,
-.projects-section h2,
-.projects-section h3,
-.home-projects h1,
-.home-projects h2,
-.home-projects h3,
-.reviews-section h1,
-.reviews-section h2,
-.reviews-section h3,
-.faq-section h1,
-.faq-section h2,
-.faq-section h3,
-.contact-section h1,
-.contact-section h2,
-.contact-section h3,
-.section-light h1,
-.section-light h2,
-.section-light h3,
-.section--light h1,
-.section--light h2,
-.section--light h3 {
-  color: #050505 !important;
+@media (max-width: 480px) {
+  .contents-grid,
+  [data-contents-grid] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
-.services-section p,
-.home-services p,
-.projects-section p,
-.home-projects p,
-.reviews-section p,
-.faq-section p,
-.contact-section p,
-.section-light p,
-.section--light p {
-  color: #2A2A2A !important;
-}
-
-/* Cards sur blanc pur */
-.services-section .service-card,
-.home-services .service-card,
-.reviews-section .review-card,
-.faq-section .faq-item,
-.contact-section .contact-card,
-.section-light .service-card,
-.section-light .review-card,
-.section-light .faq-item,
-.section--light .service-card,
-.section--light .review-card,
-.section--light .faq-item {
-  background: #FFFFFF !important;
-  color: #050505 !important;
-  border: 1px solid rgba(5, 5, 5, 0.12) !important;
-}
-
-/* Texte dans les cards blanches */
-.services-section .service-card p,
-.home-services .service-card p,
-.reviews-section .review-card p,
-.faq-section .faq-item p,
-.section-light .service-card p,
-.section-light .review-card p,
-.section-light .faq-item p {
-  color: #333333 !important;
-}
-
-/* Boutons sur fond blanc */
-.services-section .btn,
-.home-services .btn,
-.projects-section .btn,
-.home-projects .btn,
-.reviews-section .btn,
-.faq-section .btn,
-.contact-section .btn,
-.section-light .btn,
-.section--light .btn {
-  color: #050505 !important;
-  border-color: rgba(5, 5, 5, 0.25) !important;
-}
-
-.services-section .btn:hover,
-.home-services .btn:hover,
-.projects-section .btn:hover,
-.home-projects .btn:hover,
-.reviews-section .btn:hover,
-.faq-section .btn:hover,
-.contact-section .btn:hover,
-.section-light .btn:hover,
-.section--light .btn:hover {
-  background: #E83F6F !important;
-  color: #050505 !important;
-  border-color: #E83F6F !important;
-}
-
-/* Garde les zones immersives en noir */
-.hero,
-.hero--photo,
-.section--photo,
-.section--grain-dark,
-.footer,
-.site-footer {
-  background: #050505 !important;
-  color: #E8E3DC !important;
-}
