@@ -1,0 +1,23 @@
+title: "Communication digitale"
+slug: "communication-digitale"
+category: "Stratégie"
+short_description: "Je t'aide à clarifier ton message, ton univers et ta manière de communiquer."
+detailed_description: "Pour que ton projet soit plus compréhensible, plus cohérent et plus mémorable, à travers un positionnement clair et une stratégie simple."
+tagline: "Un message clair vaut mille visuels."
+included:
+  - "Positionnement"
+  - "Ton de marque"
+  - "Storytelling"
+  - "Idées de campagne"
+  - "Direction artistique simple"
+  - "Messages clés"
+  - "Stratégie de lancement"
+  - "Communication événementielle"
+  - "Cohérence Instagram / site / supports"
+price_indicative: "Sur devis"
+button_text: "Travailler ensemble"
+button_link: "contact.html"
+image: "/assets/images/uploads/placeholder-service.jpg"
+visible: true
+featured: false
+order: 3

@@ -1,0 +1,5 @@
+name: "Événementiel"
+slug: "evenementiel"
+description: "Captation et contenu autour d'un événement."
+order: 5
+visible: true

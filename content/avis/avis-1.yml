@@ -1,0 +1,8 @@
+name: "Avis client à remplacer"
+project: "La Patanne"
+service: "Community management"
+comment: "Avis client à remplacer."
+rating: 5
+date: 2026-03-01
+visible: true
+order: 1

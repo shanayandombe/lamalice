@@ -1,0 +1,15 @@
+title: "Photo portrait"
+slug: "photo-portrait-1"
+type: "Photo"
+client: "Botane"
+short_description: "Contenu à compléter — série de portraits pour Botane."
+thumbnail: "/assets/images/uploads/placeholder-content.jpg"
+video: ""
+external_link: ""
+date: 2025-12-15
+category: "projet-client"
+tags:
+  - "Photo"
+visible: true
+featured: false
+order: 5

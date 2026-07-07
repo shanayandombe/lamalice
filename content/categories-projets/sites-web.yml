@@ -1,0 +1,5 @@
+name: "Sites web"
+slug: "sites-web"
+description: "Sites vitrines et portfolios administrables."
+order: 3
+visible: true

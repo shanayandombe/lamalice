@@ -1,0 +1,15 @@
+title: "Story visuel digital"
+slug: "story-1"
+type: "Story"
+client: "Projet personnel"
+short_description: "Contenu à compléter — série de stories personnelles."
+thumbnail: "/assets/images/uploads/placeholder-content.jpg"
+video: ""
+external_link: ""
+date: 2025-11-10
+category: "archive"
+tags:
+  - "Story"
+visible: true
+featured: false
+order: 6

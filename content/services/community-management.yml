@@ -1,0 +1,25 @@
+title: "Community management"
+slug: "community-management"
+category: "Réseaux sociaux"
+short_description: "J'aide les projets à structurer leur présence sur les réseaux."
+detailed_description: "Idées de contenus, planning, captions, stories, suivi des statistiques et recommandations concrètes pour gagner en visibilité."
+tagline: "Une présence cohérente, pensée pour durer."
+included:
+  - "Planning de contenu"
+  - "Programmation"
+  - "Rédaction de captions"
+  - "Stories"
+  - "Idées de Reels"
+  - "Suivi des performances"
+  - "Analyse de statistiques"
+  - "Recommandations"
+  - "Optimisation Instagram"
+  - "Cohérence visuelle du feed"
+  - "Animation légère de communauté"
+price_indicative: "Sur devis"
+button_text: "Travailler ensemble"
+button_link: "contact.html"
+image: "/assets/images/uploads/placeholder-service.jpg"
+visible: true
+featured: true
+order: 2

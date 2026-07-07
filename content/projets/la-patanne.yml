@@ -1,0 +1,33 @@
+client: "La Patanne"
+title: "Community management + contenu événementiel"
+slug: "la-patanne"
+category: "community-management"
+mission_type: "Community management + contenu événementiel"
+status: "termine"
+project_type: "community-management"
+date: 2026-03-01
+role: "Création de contenu & gestion des réseaux"
+short_description: "Projet à compléter — accompagnement social media et captation d'événements pour La Patanne."
+detailed_description: "Projet à compléter."
+context: "Contexte à compléter."
+project_mission: "Mission à compléter."
+objectives: "Objectifs à compléter."
+services_done:
+  - "Planning de contenu"
+  - "Captation événementielle"
+  - "Stories & Reels"
+tags:
+  - "Community management"
+  - "Événementiel"
+created_content: "Contenu à compléter."
+results: "Résultat ou intention à compléter."
+backstage: "Coulisses à compléter."
+main_image: "/assets/images/uploads/placeholder-project.jpg"
+gallery:
+  - image: "/assets/images/uploads/placeholder-project.jpg"
+    alt: "Image à remplacer"
+video_link: ""
+external_link: ""
+featured: true
+visible: true
+order: 1

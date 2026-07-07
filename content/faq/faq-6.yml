@@ -1,0 +1,5 @@
+question: "Est-ce que je peux modifier mon site moi-même ?"
+answer: "Oui. Les sites que je conçois sont administrables depuis une interface simple, sans code, pour que tu puisses ajouter ou modifier tes contenus toi-même."
+category: "Sites web"
+visible: true
+order: 6

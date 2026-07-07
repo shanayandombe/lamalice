@@ -1,0 +1,26 @@
+title: "Sites web"
+slug: "sites-web"
+category: "Web"
+short_description: "Je crée des sites vitrines clairs, esthétiques et faciles à comprendre."
+detailed_description: "Pensés pour présenter ton activité, montrer ton univers et transformer les visiteurs en vrais contacts — et administrables sans toucher au code."
+tagline: "Un site qui parle, pas juste un site qui existe."
+included:
+  - "Site vitrine"
+  - "Page accueil"
+  - "Page services"
+  - "Page à propos"
+  - "Page contact"
+  - "Galerie"
+  - "Portfolio"
+  - "Intégration de contenus"
+  - "Adaptation mobile"
+  - "SEO local simple"
+  - "Mise en ligne"
+  - "Accompagnement pour modifier certains contenus"
+price_indicative: "Sur devis"
+button_text: "Travailler ensemble"
+button_link: "contact.html"
+image: "/assets/images/uploads/placeholder-service.jpg"
+visible: true
+featured: true
+order: 4

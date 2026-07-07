@@ -1,0 +1,334 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+locale: "fr"
+publish_mode: simple
+
+collections:
+
+  # =========================================================
+  # PROJETS
+  # =========================================================
+  - name: "projets"
+    label: "Projets"
+    label_singular: "Projet"
+    folder: "content/projets"
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    summary: "{{client}} — {{title}}"
+    sortable_fields: ["order", "date", "client"]
+    fields:
+      - { label: "Entreprise / client", name: "client", widget: "string", hint: "Nom affiché en priorité sur la carte projet." }
+      - { label: "Titre du projet", name: "title", widget: "string" }
+      - { label: "Slug (URL)", name: "slug", widget: "string", hint: "Utilisé dans projet.html?slug=..." }
+      - label: "Catégorie de projet"
+        name: "category"
+        widget: "relation"
+        collection: "categories-projets"
+        search_fields: ["name"]
+        value_field: "slug"
+        display_fields: ["name"]
+        hint: "Choisis une catégorie créée dans 'Catégories de projets'."
+      - { label: "Type de mission (affiché sur la carte)", name: "mission_type", widget: "string" }
+      - label: "Statut"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Terminé", value: "termine" }
+          - { label: "En cours", value: "en-cours" }
+          - { label: "Projet personnel", value: "projet-personnel" }
+          - { label: "Archive", value: "archive" }
+        default: "termine"
+      - label: "Type de projet"
+        name: "project_type"
+        widget: "select"
+        options:
+          - { label: "Création de contenu", value: "creation-contenu" }
+          - { label: "Community management", value: "community-management" }
+          - { label: "Communication digitale", value: "communication-digitale" }
+          - { label: "Site web", value: "site-web" }
+          - { label: "Événementiel", value: "evenementiel" }
+          - { label: "Identité / direction artistique", value: "direction-artistique" }
+          - { label: "Projet personnel", value: "projet-personnel" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Rôle", name: "role", widget: "string", required: false }
+      - { label: "Description courte", name: "short_description", widget: "text" }
+      - { label: "Description détaillée", name: "detailed_description", widget: "text", required: false }
+      - { label: "Contexte", name: "context", widget: "text", required: false }
+      - { label: "Mission", name: "project_mission", widget: "text", required: false }
+      - { label: "Objectifs", name: "objectives", widget: "text", required: false }
+      - label: "Services réalisés"
+        name: "services_done"
+        widget: "list"
+        required: false
+        field: { label: "Service", name: "service", widget: "string" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field: { label: "Tag", name: "tag", widget: "string" }
+      - { label: "Contenus créés (texte libre)", name: "created_content", widget: "text", required: false }
+      - { label: "Résultats ou intention", name: "results", widget: "text", required: false }
+      - { label: "Coulisses", name: "backstage", widget: "text", required: false }
+      - { label: "Image principale", name: "main_image", widget: "image" }
+      - label: "Galerie d'images"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field:
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Texte alternatif", name: "alt", widget: "string", required: false }
+      - { label: "Vidéo / lien Reel-TikTok-Instagram", name: "video_link", widget: "string", required: false }
+      - { label: "Lien externe (site du client)", name: "external_link", widget: "string", required: false }
+      - { label: "Mis en avant sur la home", name: "featured", widget: "boolean", default: false }
+      - { label: "Visible", name: "visible", widget: "boolean", default: true }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1, value_type: "int" }
+
+  # =========================================================
+  # CATÉGORIES DE PROJETS
+  # =========================================================
+  - name: "categories-projets"
+    label: "Catégories de projets"
+    label_singular: "Catégorie"
+    folder: "content/categories-projets"
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    summary: "{{name}}"
+    sortable_fields: ["order", "name"]
+    fields:
+      - { label: "Nom de la catégorie", name: "name", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "Identifiant unique, sans espace ni accent (ex: sites-web)." }
+      - { label: "Description courte", name: "description", widget: "text", required: false }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1, value_type: "int" }
+      - { label: "Visible dans les filtres", name: "visible", widget: "boolean", default: true }
+
+  # =========================================================
+  # CONTENUS CRÉÉS
+  # =========================================================
+  - name: "contenus"
+    label: "Contenus créés"
+    label_singular: "Contenu"
+    folder: "content/contenus"
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    summary: "{{title}} — {{type}}"
+    sortable_fields: ["order", "date"]
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - label: "Type de contenu"
+        name: "type"
+        widget: "select"
+        options:
+          - "Reel"
+          - "TikTok"
+          - "Photo"
+          - "Story"
+          - "Carousel"
+          - "Behind the scenes"
+          - "Face cam"
+          - "Voice-over"
+          - "Montage vidéo"
+          - "Site web"
+          - "Visuel digital"
+      - { label: "Client ou projet lié", name: "client", widget: "string", required: false }
+      - { label: "Description courte", name: "short_description", widget: "text", required: false }
+      - { label: "Image ou miniature", name: "thumbnail", widget: "image" }
+      - { label: "Vidéo (optionnel)", name: "video", widget: "file", required: false }
+      - { label: "Lien Instagram / TikTok / site (optionnel)", name: "external_link", widget: "string", required: false }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Catégorie", name: "category", widget: "string", required: false, hint: "Ex : coulisses, projet-client, evenement, archive." }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field: { label: "Tag", name: "tag", widget: "string" }
+      - { label: "Visible", name: "visible", widget: "boolean", default: true }
+      - { label: "Mis en avant", name: "featured", widget: "boolean", default: false }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1, value_type: "int" }
+
+  # =========================================================
+  # GALERIE
+  # =========================================================
+  - name: "galerie"
+    label: "Galerie"
+    label_singular: "Image"
+    folder: "content/galerie"
+    create: true
+    delete: true
+    summary: "{{title}}"
+    sortable_fields: ["order", "date"]
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Texte alternatif (SEO)", name: "alt", widget: "string" }
+      - { label: "Légende", name: "caption", widget: "string", required: false }
+      - label: "Catégorie"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Coulisses", value: "coulisses" }
+          - { label: "Portrait", value: "portrait" }
+          - { label: "Tournage", value: "tournage" }
+          - { label: "Contenu", value: "contenu" }
+          - { label: "Projet client", value: "projet-client" }
+          - { label: "Site web", value: "site-web" }
+          - { label: "Événement", value: "evenement" }
+          - { label: "Archive", value: "archive" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Visible", name: "visible", widget: "boolean", default: true }
+      - { label: "Mis en avant (home / à propos)", name: "featured", widget: "boolean", default: false }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1, value_type: "int" }
+
+  # =========================================================
+  # SERVICES
+  # =========================================================
+  - name: "services"
+    label: "Services"
+    label_singular: "Service"
+    folder: "content/services"
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    summary: "{{title}}"
+    sortable_fields: ["order"]
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Catégorie", name: "category", widget: "string", required: false }
+      - { label: "Description courte", name: "short_description", widget: "text" }
+      - { label: "Description détaillée", name: "detailed_description", widget: "text", required: false }
+      - { label: "Phrase d'accroche", name: "tagline", widget: "string", required: false }
+      - label: "Prestations incluses"
+        name: "included"
+        widget: "list"
+        required: false
+        field: { label: "Prestation", name: "item", widget: "string" }
+      - { label: "Prix indicatif (optionnel)", name: "price_indicative", widget: "string", required: false }
+      - { label: "Texte du bouton", name: "button_text", widget: "string", default: "Travailler ensemble" }
+      - { label: "Lien du bouton", name: "button_link", widget: "string", default: "contact.html" }
+      - { label: "Image ou icône (optionnel)", name: "image", widget: "image", required: false }
+      - { label: "Visible", name: "visible", widget: "boolean", default: true }
+      - { label: "Mis en avant (home)", name: "featured", widget: "boolean", default: false }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1, value_type: "int" }
+
+  # =========================================================
+  # AVIS
+  # =========================================================
+  - name: "avis"
+    label: "Avis"
+    label_singular: "Avis"
+    folder: "content/avis"
+    create: true
+    delete: true
+    summary: "{{name}} — {{project}}"
+    sortable_fields: ["order", "date"]
+    fields:
+      - { label: "Prénom / nom", name: "name", widget: "string" }
+      - { label: "Projet lié", name: "project", widget: "string", required: false }
+      - { label: "Service", name: "service", widget: "string", required: false }
+      - { label: "Commentaire", name: "comment", widget: "text" }
+      - { label: "Note (sur 5)", name: "rating", widget: "number", min: 1, max: 5, default: 5, value_type: "int", required: false }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: "Visible", name: "visible", widget: "boolean", default: true }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1, value_type: "int" }
+
+  # =========================================================
+  # FAQ
+  # =========================================================
+  - name: "faq"
+    label: "FAQ"
+    label_singular: "Question"
+    folder: "content/faq"
+    create: true
+    delete: true
+    summary: "{{question}}"
+    sortable_fields: ["order"]
+    fields:
+      - { label: "Question", name: "question", widget: "string" }
+      - { label: "Réponse", name: "answer", widget: "text" }
+      - { label: "Catégorie (optionnel)", name: "category", widget: "string", required: false }
+      - { label: "Visible", name: "visible", widget: "boolean", default: true }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1, value_type: "int" }
+
+  # =========================================================
+  # PARAMÈTRES DU SITE (fichier unique)
+  # =========================================================
+  - name: "settings"
+    label: "Paramètres du site"
+    files:
+      - name: "site"
+        label: "Paramètres généraux"
+        file: "content/settings/site.yml"
+        fields:
+          - { label: "Nom du site", name: "site_name", widget: "string", default: "La Malice" }
+          - { label: "Slogan", name: "slogan", widget: "string" }
+          - { label: "Baseline", name: "baseline", widget: "string", required: false }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Téléphone (optionnel)", name: "phone", widget: "string", required: false }
+          - { label: "Instagram", name: "instagram_url", widget: "string" }
+          - { label: "TikTok (optionnel)", name: "tiktok_url", widget: "string", required: false }
+          - { label: "LinkedIn (optionnel)", name: "linkedin_url", widget: "string", required: false }
+          - { label: "Texte du hero (accueil)", name: "hero_text", widget: "text" }
+          - { label: "Texte bouton principal", name: "hero_button_text", widget: "string" }
+          - { label: "Lien bouton principal", name: "hero_button_link", widget: "string" }
+          - { label: "Texte bouton secondaire", name: "hero_button_secondary_text", widget: "string" }
+          - { label: "Lien bouton secondaire", name: "hero_button_secondary_link", widget: "string" }
+          - { label: "Message bandeau (optionnel)", name: "banner_message", widget: "string", required: false }
+          - { label: "Afficher le bandeau", name: "banner_show", widget: "boolean", default: false }
+          - { label: "Texte footer", name: "footer_text", widget: "string" }
+          - { label: "SEO — Titre accueil", name: "seo_title_home", widget: "string" }
+          - { label: "SEO — Description accueil", name: "seo_description_home", widget: "text" }
+          - { label: "Image Open Graph", name: "og_image", widget: "image", required: false }
+          - { label: "Afficher le formulaire email", name: "form_email_display", widget: "boolean", default: true }
+          - { label: "Message de succès (formulaire)", name: "success_message", widget: "text" }
+          - { label: "Label navigation — Projets", name: "nav_label_projects", widget: "string", default: "Projets" }
+          - { label: "Label navigation — Galerie", name: "nav_label_gallery", widget: "string", default: "Galerie" }
+          - { label: "Label navigation — À propos", name: "nav_label_about", widget: "string", default: "À propos" }
+          - { label: "Label navigation — Contact", name: "nav_label_contact", widget: "string", default: "Contact" }
+          - { label: "Texte bouton CTA navigation", name: "nav_cta_text", widget: "string", default: "Travailler ensemble" }
+
+      - name: "about"
+        label: "Page À propos"
+        file: "content/settings/about.yml"
+        fields:
+          - { label: "Titre principal", name: "title", widget: "string" }
+          - { label: "Sous-titre", name: "subtitle", widget: "text" }
+          - { label: "Texte d'introduction", name: "intro_text", widget: "text" }
+          - { label: "Texte sur la danse", name: "dance_text", widget: "text" }
+          - { label: "Texte sur le parcours professionnel", name: "career_text", widget: "text" }
+          - { label: "Titre — instinct & structure", name: "structure_title", widget: "string", required: false }
+          - { label: "Texte — instinct & structure", name: "structure_text", widget: "text", required: false }
+          - { label: "Image portrait principale", name: "portrait_image", widget: "image" }
+          - label: "Galerie d'images artistiques"
+            name: "gallery_images"
+            widget: "list"
+            required: false
+            field:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Texte alternatif", name: "alt", widget: "string", required: false }
+          - { label: "Titre — Ce que la danse m'a appris", name: "learned_title", widget: "string", required: false }
+          - label: "Blocs — Ce que la danse m'a appris"
+            name: "learned_blocks"
+            widget: "list"
+            required: false
+            field:
+              - { label: "Titre du bloc", name: "title", widget: "string" }
+              - { label: "Texte du bloc", name: "text", widget: "text" }
+          - label: "Timeline artistique & professionnelle"
+            name: "timeline"
+            widget: "list"
+            required: false
+            field:
+              - { label: "Libellé", name: "label", widget: "string" }
+              - { label: "Tag (ex: DANSE / PRO)", name: "tag", widget: "string", required: false }
+          - { label: "Afficher la section danse", name: "show_dance_section", widget: "boolean", default: true }
+          - { label: "Afficher la section parcours pro", name: "show_career_section", widget: "boolean", default: true }
+          - { label: "Afficher la timeline", name: "show_timeline", widget: "boolean", default: true }

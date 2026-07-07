@@ -1,0 +1,16 @@
+title: "TikTok événementiel"
+slug: "tiktok-1"
+type: "TikTok"
+client: "La Patanne"
+short_description: "Contenu à compléter — recap TikTok d'un événement."
+thumbnail: "/assets/images/uploads/placeholder-content.jpg"
+video: ""
+external_link: ""
+date: 2026-01-05
+category: "evenement"
+tags:
+  - "TikTok"
+  - "Événementiel"
+visible: true
+featured: false
+order: 4

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet — La Malice</title>
+  <meta name="description" content="Détail d'un projet réalisé par La Malice : contexte, mission, objectifs et résultats.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <div class="announce-bar hidden" data-announce-bar></div>
+
+  <header class="navbar">
+    <a href="index.html" class="nav-logo">LA<span>MALICE</span></a>
+    <nav class="nav-links">
+      <a href="projets.html" class="nav-link" data-nav-projects>Projets</a>
+      <a href="galerie.html" class="nav-link" data-nav-gallery>Galerie</a>
+      <a href="a-propos.html" class="nav-link" data-nav-about>À propos</a>
+      <a href="contact.html" class="nav-link" data-nav-contact>Contact</a>
+      <a href="contact.html" class="btn btn--pink nav-cta" data-nav-cta>Travailler ensemble</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- ÉTAT : PROJET INTROUVABLE -->
+  <section class="not-found hidden" data-project-not-found>
+    <div class="container">
+      <div class="hero__tags text-center">
+        <span class="tag tag--rec">404</span>
+      </div>
+      <h1 class="not-found__title">Projet introuvable.</h1>
+      <p class="section-sub text-center" style="margin-inline:auto">Ce projet n'existe pas ou plus. Il a peut-être été renommé ou retiré depuis l'admin.</p>
+      <div class="mt-lg">
+        <a href="projets.html" class="btn">Retour aux projets <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÉTAIL PROJET -->
+  <div data-project-detail>
+
+    <section class="project-hero">
+      <div class="container">
+        <a href="projets.html" class="project-hero__back">← Retour aux projets</a>
+        <div class="project-hero__meta">
+          <span class="tag" data-p-category>Catégorie</span>
+          <span class="tag" data-p-status>Statut</span>
+          <span class="tag" data-p-date>Date</span>
+        </div>
+        <h1 class="project-hero__client" data-p-client>Client</h1>
+        <p class="project-hero__mission" data-p-mission>Type de mission</p>
+
+        <div class="project-hero__image">
+          <img data-p-main-image src="" alt="Image principale du projet">
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="project-info-grid">
+        <div class="project-info-item">
+          <span class="label">Rôle</span>
+          <span class="value" data-p-role>—</span>
+        </div>
+        <div class="project-info-item">
+          <span class="label">Catégorie</span>
+          <span class="value" data-p-category-info>—</span>
+        </div>
+        <div class="project-info-item">
+          <span class="label">Services réalisés</span>
+          <div class="value" data-p-services></div>
+        </div>
+        <div class="project-info-item">
+          <span class="label">Lien externe</span>
+          <a class="value hidden" data-p-external-link target="_blank" rel="noopener">Voir le site ↗</a>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block" data-reveal>
+          <h3>Contexte</h3>
+          <p data-p-context>Contexte à compléter.</p>
+        </div>
+        <div class="project-body__block" data-reveal>
+          <h3>Mission</h3>
+          <p data-p-mission-text>Mission à compléter.</p>
+        </div>
+        <div class="project-body__block" data-reveal>
+          <h3>Objectifs</h3>
+          <p data-p-objectives>Objectifs à compléter.</p>
+        </div>
+        <div class="project-body__block" data-reveal>
+          <h3>Résultat / intention</h3>
+          <p data-p-results>Résultat à compléter.</p>
+        </div>
+        <div class="project-body__block" data-reveal>
+          <h3>Coulisses</h3>
+          <p data-p-backstage>Coulisses à compléter.</p>
+        </div>
+      </div>
+
+      <div style="margin-block:20px">
+        <div class="project-info-item">
+          <span class="label">Tags</span>
+          <div class="value" data-p-tags></div>
+        </div>
+      </div>
+
+      <div class="project-gallery" data-p-gallery data-lightbox-gallery></div>
+
+      <!-- CONTENUS LIÉS -->
+      <div data-p-related-section class="section--tight hidden">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Contenus liés</span>
+          <h2 class="section-title" style="font-size:clamp(26px,4vw,44px)">Ce qui a été créé pour ce projet.</h2>
+        </div>
+        <div class="contents-grid" data-p-related-contents></div>
+      </div>
+
+      <div class="project-nav">
+        <a href="#" class="project-nav__link" data-p-prev>← Projet précédent<span></span></a>
+        <a href="projets.html" class="btn btn--ghost">Tous les projets</a>
+        <a href="#" class="project-nav__link" data-p-next style="text-align:right">Projet suivant →<span></span></a>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__logo">LA<span>MALICE</span></div>
+          <p class="footer__lede" data-settings-footer-text>La Malice — Contenu, communication & sites web pensés avec intention.</p>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <div class="footer__col-title">Navigation</div>
+            <a href="projets.html">Projets</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Contact</div>
+            <a href="mailto:contact@lamalice.ch" data-settings-email>contact@lamalice.ch</a>
+            <a href="tel:" data-settings-phone class="hidden"></a>
+            <a href="https://www.instagram.com/lamalice.ch/" target="_blank" rel="noopener" data-settings-instagram>Instagram</a>
+            <a href="#" target="_blank" rel="noopener" data-settings-tiktok class="hidden">TikTok</a>
+            <a href="#" target="_blank" rel="noopener" data-settings-linkedin class="hidden">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> La Malice. Tous droits réservés.</span>
+        <span>Site conçu avec malice.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/la-malice-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

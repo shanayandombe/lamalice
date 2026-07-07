@@ -1,0 +1,16 @@
+title: "Reel produit"
+slug: "reel-produit-1"
+type: "Reel"
+client: "Zia Kürtös"
+short_description: "Contenu à compléter — mise en avant produit en format vertical."
+thumbnail: "/assets/images/uploads/placeholder-content.jpg"
+video: ""
+external_link: ""
+date: 2026-02-10
+category: "projet-client"
+tags:
+  - "Reel"
+  - "Produit"
+visible: true
+featured: true
+order: 2

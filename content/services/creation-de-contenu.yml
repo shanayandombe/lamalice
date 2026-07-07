@@ -1,0 +1,28 @@
+title: "Création de contenu"
+slug: "creation-de-contenu"
+category: "Contenu"
+short_description: "Je crée des contenus courts, dynamiques et authentiques pour montrer ton projet sous son meilleur angle."
+detailed_description: "Reels, TikToks, stories, photos, coulisses, produits, événements et formats prêts à publier — pensés pour donner du rythme et du caractère à ton image."
+tagline: "Du contenu qui vit, pas juste joli."
+included:
+  - "Reels"
+  - "TikToks"
+  - "Vidéos courtes verticales"
+  - "Photos Instagram"
+  - "Contenus événementiels"
+  - "Coulisses"
+  - "Contenus produits"
+  - "Face cam"
+  - "Voice-over"
+  - "Montage vidéo"
+  - "Textes à l'écran"
+  - "Captions"
+  - "Stories"
+  - "Déclinaison d'un tournage en plusieurs contenus"
+price_indicative: "Sur devis"
+button_text: "Travailler ensemble"
+button_link: "contact.html"
+image: "/assets/images/uploads/placeholder-service.jpg"
+visible: true
+featured: true
+order: 1

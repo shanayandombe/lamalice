@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie — La Malice | Coulisses & univers visuel</title>
+  <meta name="description" content="L'univers visuel de La Malice : coulisses, portraits, tournages, projets clients et événements, en noir & blanc et grain.">
+  <link rel="canonical" href="https://www.lamalice.ch/galerie.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Galerie — La Malice">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <div class="announce-bar hidden" data-announce-bar></div>
+
+  <header class="navbar">
+    <a href="index.html" class="nav-logo">LA<span>MALICE</span></a>
+    <nav class="nav-links">
+      <a href="projets.html" class="nav-link" data-nav-projects>Projets</a>
+      <a href="galerie.html" class="nav-link" data-nav-gallery>Galerie</a>
+      <a href="a-propos.html" class="nav-link" data-nav-about>À propos</a>
+      <a href="contact.html" class="nav-link" data-nav-contact>Contact</a>
+      <a href="contact.html" class="btn btn--pink nav-cta" data-nav-cta>Travailler ensemble</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <section class="hero" style="padding-bottom:40px;">
+    <div class="container" style="max-width:820px">
+      <div class="hero__tags">
+        <span class="tag tag--rec">REC</span>
+        <span class="tag">Coulisses</span>
+      </div>
+      <h1 class="hero__title" style="font-size:clamp(40px,8vw,84px)">L'univers visuel de La Malice.</h1>
+      <p class="hero__lede">Coulisses, portraits, tournages, projets clients et événements — un carnet visuel noir & blanc, grainé et vivant.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="filters" data-gallery-filters></div>
+      <div class="masonry" data-gallery-grid></div>
+    </div>
+  </section>
+
+  <section class="section text-center" style="max-width:700px; margin-inline:auto">
+    <div class="container" data-reveal>
+      <h2 class="section-title">Envie d'ajouter ton projet à cet univers ?</h2>
+      <div class="mt-lg">
+        <a href="contact.html" class="btn">Écris-moi <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__logo">LA<span>MALICE</span></div>
+          <p class="footer__lede" data-settings-footer-text>La Malice — Contenu, communication & sites web pensés avec intention.</p>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <div class="footer__col-title">Navigation</div>
+            <a href="projets.html">Projets</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Contact</div>
+            <a href="mailto:contact@lamalice.ch" data-settings-email>contact@lamalice.ch</a>
+            <a href="tel:" data-settings-phone class="hidden"></a>
+            <a href="https://www.instagram.com/lamalice.ch/" target="_blank" rel="noopener" data-settings-instagram>Instagram</a>
+            <a href="#" target="_blank" rel="noopener" data-settings-tiktok class="hidden">TikTok</a>
+            <a href="#" target="_blank" rel="noopener" data-settings-linkedin class="hidden">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> La Malice. Tous droits réservés.</span>
+        <span>Site conçu avec malice.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/la-malice-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

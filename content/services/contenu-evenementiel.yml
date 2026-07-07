@@ -1,0 +1,23 @@
+title: "Contenu événementiel"
+slug: "contenu-evenementiel"
+category: "Événementiel"
+short_description: "Je capture l'ambiance, les détails, les coulisses et les moments forts de ton événement."
+detailed_description: "Pour en faire du contenu vivant et prêt à publier, pendant et juste après l'événement."
+tagline: "L'énergie d'un événement, capturée et prête à publier."
+included:
+  - "Présence sur place"
+  - "Captation vidéo/photo"
+  - "Reels"
+  - "Stories"
+  - "Contenus coulisses"
+  - "Contenus produits"
+  - "Recap"
+  - "Captions"
+  - "Formats prêts à publier"
+price_indicative: "Sur devis"
+button_text: "Travailler ensemble"
+button_link: "contact.html"
+image: "/assets/images/uploads/placeholder-service.jpg"
+visible: true
+featured: false
+order: 5

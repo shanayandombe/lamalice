@@ -1,0 +1,21 @@
+title: "Présence digitale complète"
+slug: "presence-digitale-complete"
+category: "Accompagnement"
+short_description: "Je t'aide à construire une présence digitale cohérente entre ton site, tes réseaux et ton image."
+detailed_description: "Pour que ton projet soit plus clair, plus beau et plus visible, du site aux réseaux sociaux."
+tagline: "Tout ton univers digital, aligné."
+included:
+  - "Mini-stratégie"
+  - "Contenus réseaux sociaux"
+  - "Optimisation Instagram"
+  - "Site vitrine"
+  - "Textes principaux"
+  - "Cohérence visuelle"
+  - "Recommandations"
+price_indicative: "Sur devis"
+button_text: "Travailler ensemble"
+button_link: "contact.html"
+image: "/assets/images/uploads/placeholder-service.jpg"
+visible: true
+featured: false
+order: 6

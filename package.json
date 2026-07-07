@@ -1,0 +1,12 @@
+{
+  "name": "la-malice",
+  "version": "1.0.0",
+  "description": "Site portfolio de La Malice — studio créatif personnel.",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

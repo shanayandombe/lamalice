@@ -1,0 +1,5 @@
+name: "Contenu"
+slug: "contenu"
+description: "Reels, photos, vidéos et formats courts."
+order: 1
+visible: true
