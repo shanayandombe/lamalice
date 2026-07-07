@@ -2259,3 +2259,134 @@ textarea::placeholder {
 .section {
   border-color: rgba(232, 227, 220, 0.10) !important;
 }
+
+/* ==========================================================================
+   LA MALICE — WHITE SECTIONS PURE WHITE
+   À coller tout en bas de styles.css
+   ========================================================================== */
+
+/* Sections en blanc pur */
+.services-section,
+.home-services,
+.projects-section,
+.home-projects,
+.reviews-section,
+.faq-section,
+.contact-section,
+.section-light,
+.section--light,
+.bg-white,
+.bg-offwhite {
+  background: #FFFFFF !important;
+  color: #050505 !important;
+}
+
+/* Textes sur sections blanches */
+.services-section h1,
+.services-section h2,
+.services-section h3,
+.home-services h1,
+.home-services h2,
+.home-services h3,
+.projects-section h1,
+.projects-section h2,
+.projects-section h3,
+.home-projects h1,
+.home-projects h2,
+.home-projects h3,
+.reviews-section h1,
+.reviews-section h2,
+.reviews-section h3,
+.faq-section h1,
+.faq-section h2,
+.faq-section h3,
+.contact-section h1,
+.contact-section h2,
+.contact-section h3,
+.section-light h1,
+.section-light h2,
+.section-light h3,
+.section--light h1,
+.section--light h2,
+.section--light h3 {
+  color: #050505 !important;
+}
+
+.services-section p,
+.home-services p,
+.projects-section p,
+.home-projects p,
+.reviews-section p,
+.faq-section p,
+.contact-section p,
+.section-light p,
+.section--light p {
+  color: #2A2A2A !important;
+}
+
+/* Cards sur blanc pur */
+.services-section .service-card,
+.home-services .service-card,
+.reviews-section .review-card,
+.faq-section .faq-item,
+.contact-section .contact-card,
+.section-light .service-card,
+.section-light .review-card,
+.section-light .faq-item,
+.section--light .service-card,
+.section--light .review-card,
+.section--light .faq-item {
+  background: #FFFFFF !important;
+  color: #050505 !important;
+  border: 1px solid rgba(5, 5, 5, 0.12) !important;
+}
+
+/* Texte dans les cards blanches */
+.services-section .service-card p,
+.home-services .service-card p,
+.reviews-section .review-card p,
+.faq-section .faq-item p,
+.section-light .service-card p,
+.section-light .review-card p,
+.section-light .faq-item p {
+  color: #333333 !important;
+}
+
+/* Boutons sur fond blanc */
+.services-section .btn,
+.home-services .btn,
+.projects-section .btn,
+.home-projects .btn,
+.reviews-section .btn,
+.faq-section .btn,
+.contact-section .btn,
+.section-light .btn,
+.section--light .btn {
+  color: #050505 !important;
+  border-color: rgba(5, 5, 5, 0.25) !important;
+}
+
+.services-section .btn:hover,
+.home-services .btn:hover,
+.projects-section .btn:hover,
+.home-projects .btn:hover,
+.reviews-section .btn:hover,
+.faq-section .btn:hover,
+.contact-section .btn:hover,
+.section-light .btn:hover,
+.section--light .btn:hover {
+  background: #E83F6F !important;
+  color: #050505 !important;
+  border-color: #E83F6F !important;
+}
+
+/* Garde les zones immersives en noir */
+.hero,
+.hero--photo,
+.section--photo,
+.section--grain-dark,
+.footer,
+.site-footer {
+  background: #050505 !important;
+  color: #E8E3DC !important;
+}
