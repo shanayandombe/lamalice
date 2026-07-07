@@ -44,27 +44,26 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="container hero__grid">
-      <div>
+  <section class="hero hero--photo on-photo">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="assets/images/uploads/placeholder-project.jpg" alt="" class="hero__bg-img">
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="container hero__grid hero__grid--single">
+      <div class="hero__content">
         <div class="hero__tags">
           <span class="tag tag--rec">REC</span>
           <span class="tag">Client work</span>
           <span class="tag">Behind the scenes</span>
         </div>
         <h1 class="hero__title">
-          LA <span class="word-rotate" data-word-rotate='["MALICE", "PRÉSENCE", "ÉNERGIE", "MATIÈRE"]'>MALICE</span>
+          LA <span class="word-rotate" data-word-rotate='["MALICE", "PRÉSENCE", "FOUGUE"]'>MALICE</span>
         </h1>
         <p class="hero__lede">Je crée du contenu, des sites et des univers digitaux pour aider les marques, événements et indépendants à mieux se montrer, mieux raconter ce qu'ils font et créer une présence qui marque.</p>
         <div class="hero__actions">
           <a href="projets.html" class="btn">Voir les projets <span class="btn-arrow">→</span></a>
           <a href="contact.html" class="btn btn--ghost">Travailler ensemble</a>
         </div>
-      </div>
-      <div class="hero__visual">
-        <img src="assets/images/uploads/placeholder-project.jpg" alt="Aperçu de tournage La Malice">
-        <span class="hero__sticker">● CLIENT WORK</span>
-        <span class="hero__sticker hero__sticker--bottom">BACKSTAGE</span>
       </div>
     </div>
   </section>
@@ -86,7 +85,7 @@
   </div>
 
   <!-- SERVICES APERÇU -->
-  <section class="section" id="services">
+  <section class="section" id="services" style="background:var(--white)">
     <div class="container">
       <div class="section-head" data-reveal>
         <span class="eyebrow">Ce que je fais</span>
@@ -101,7 +100,7 @@
   </section>
 
   <!-- PROJETS RÉCENTS -->
-  <section class="section section--tight" style="background:var(--white)">
+  <section class="section section--tight section--grain">
     <div class="container">
       <div class="section-head" data-reveal>
         <span class="eyebrow">Projets récents</span>
@@ -115,12 +114,16 @@
   </section>
 
   <!-- IDENTITÉ -->
-  <section class="section">
+  <section class="section section--photo on-photo">
+    <div class="section-photo-bg" aria-hidden="true">
+      <img src="assets/images/uploads/placeholder-4.jpg" alt="">
+    </div>
+    <div class="section-photo-overlay" aria-hidden="true"></div>
     <div class="container" style="max-width:840px">
       <div class="text-center" data-reveal>
         <span class="eyebrow">Derrière La Malice</span>
-        <h2 class="section-title">Une créative qui pense avec le rythme.</h2>
-        <p class="section-sub text-center">La Malice mélange danse, communication, contenu et web pour créer des présences digitales qui ont du mouvement, du caractère et une vraie intention.</p>
+        <h2 class="section-title" style="color:var(--offwhite)">Une créative qui pense avec le rythme.</h2>
+        <p class="section-sub text-center" style="color:var(--lightgrey)">La Malice mélange danse, communication, contenu et web pour créer des présences digitales qui ont du mouvement, du caractère et une vraie intention.</p>
         <div class="mt-lg">
           <a href="a-propos.html" class="btn btn--ghost">Découvrir mon univers <span class="btn-arrow">→</span></a>
         </div>
@@ -129,7 +132,7 @@
   </section>
 
   <!-- PAS JUSTE JOLI -->
-  <section class="section section--tight" style="background:var(--black); color:var(--offwhite)">
+  <section class="section section--tight section--grain-dark" style="background:var(--black); color:var(--offwhite)">
     <div class="container" style="max-width:900px">
       <div class="text-center" data-reveal>
         <span class="eyebrow">La promesse</span>
@@ -140,7 +143,7 @@
   </section>
 
   <!-- GALERIE / COULISSES -->
-  <section class="section">
+  <section class="section section--grain">
     <div class="container">
       <div class="section-head" data-reveal>
         <span class="eyebrow">Coulisses</span>
