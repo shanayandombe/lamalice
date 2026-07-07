@@ -223,8 +223,8 @@ function readCollection(folderName) {
   });
 
   items.sort((a, b) => {
-    const orderA = typeof a.order === "number" ? a.order : 9999;
-    const orderB = typeof b.order === "number" ? b.order : 9999;
+    const orderA = toOrderNumber(a.order);
+    const orderB = toOrderNumber(b.order);
     if (orderA !== orderB) return orderA - orderB;
     const dateA = a.date ? new Date(a.date).getTime() : 0;
     const dateB = b.date ? new Date(b.date).getTime() : 0;
@@ -232,6 +232,16 @@ function readCollection(folderName) {
   });
 
   return items;
+}
+
+// Convertit un champ "order" en nombre exploitable, quel que soit son type
+// d'origine (nombre natif YAML, chaîne "1" écrite à la main ou par erreur,
+// valeur absente ou vide). Un ordre non interprétable est repoussé en fin
+// de liste (9999) plutôt que de faire planter le tri.
+function toOrderNumber(raw) {
+  if (typeof raw === "number" && !isNaN(raw)) return raw;
+  const parsed = parseFloat(raw);
+  return isNaN(parsed) ? 9999 : parsed;
 }
 
 function readSettingsFile(fileName, defaults) {
