@@ -591,6 +591,187 @@ p {
 }
 
 /* --------------------------------------------------------------------------
+   HERO — VARIANTE FOND PHOTO (utilisée sur la home)
+   -------------------------------------------------------------------------- */
+
+.hero--photo {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding-top: clamp(120px, 16vw, 170px);
+  padding-bottom: clamp(70px, 9vw, 110px);
+  color: var(--offwhite);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.12) brightness(0.6);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    linear-gradient(100deg, rgba(13,13,13,0.9) 0%, rgba(13,13,13,0.6) 42%, rgba(13,13,13,0.32) 62%, rgba(13,13,13,0.7) 100%),
+    linear-gradient(180deg, rgba(13,13,13,0.1) 0%, rgba(13,13,13,0.55) 72%, rgba(13,13,13,0.92) 100%);
+}
+
+.hero--photo .hero__grid {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__grid--single {
+  grid-template-columns: 1fr;
+}
+
+.hero__content {
+  max-width: 720px;
+}
+
+.hero--photo .hero__title {
+  color: var(--offwhite);
+}
+
+.hero--photo .hero__lede {
+  color: var(--lightgrey);
+}
+
+@media (max-width: 700px) {
+  .hero--photo {
+    min-height: 74vh;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ÉLÉMENTS SUR FOND PHOTO (hero et sections photo) — lisibilité des composants
+   -------------------------------------------------------------------------- */
+
+.on-photo .tag {
+  border-color: rgba(244, 241, 236, 0.35);
+  color: var(--lightgrey);
+}
+
+.on-photo .tag--rec {
+  color: var(--pink);
+  border-color: var(--pink);
+}
+
+.on-photo .btn:not(.btn--ghost) {
+  background: var(--offwhite);
+  border-color: var(--offwhite);
+  color: var(--black);
+}
+
+.on-photo .btn:not(.btn--ghost):hover {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: var(--white);
+}
+
+.on-photo .btn--ghost {
+  background: transparent;
+  color: var(--offwhite);
+  border-color: rgba(244, 241, 236, 0.5);
+}
+
+.on-photo .btn--ghost:hover {
+  background: var(--offwhite);
+  border-color: var(--offwhite);
+  color: var(--black);
+}
+
+/* --------------------------------------------------------------------------
+   SECTIONS PLEINE LARGEUR AVEC PHOTO N&B + OVERLAY (ex: "Derrière La Malice")
+   -------------------------------------------------------------------------- */
+
+.section--photo {
+  position: relative;
+  overflow: hidden;
+  color: var(--offwhite);
+}
+
+.section-photo-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.section-photo-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.1) brightness(0.5);
+}
+
+.section-photo-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(13, 13, 13, 0.62) 0%, rgba(13, 13, 13, 0.82) 100%);
+}
+
+.section--photo > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   TEXTURE GRAIN LÉGÈRE POUR SECTIONS CLAIRES / SOMBRES
+   -------------------------------------------------------------------------- */
+
+.section--grain {
+  position: relative;
+}
+
+.section--grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 160px 160px;
+}
+
+.section--grain > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.section--grain-dark {
+  position: relative;
+}
+
+.section--grain-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 160px 160px;
+}
+
+.section--grain-dark > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
    REVEAL ON SCROLL
    -------------------------------------------------------------------------- */
 
