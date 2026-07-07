@@ -1864,3 +1864,152 @@ p {
 
 .mt-lg { margin-top: clamp(32px, 5vw, 60px); }
 .hidden { display: none !important; }
+
+/* ==========================================================================
+   FIX — projets invisibles mais cliquables
+   ========================================================================== */
+
+.project-card {
+  position: relative !important;
+  display: block !important;
+  min-height: 420px !important;
+  overflow: hidden !important;
+  border-radius: 28px !important;
+  background: #0D0D0D !important;
+  color: #F4F1EC !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+.project-card__img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  opacity: 0.72 !important;
+  visibility: visible !important;
+  filter: grayscale(1) contrast(1.08) !important;
+  z-index: 1 !important;
+}
+
+.project-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(13, 13, 13, 0.12) 0%,
+      rgba(13, 13, 13, 0.45) 45%,
+      rgba(13, 13, 13, 0.88) 100%
+    ) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+.project-card__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 3 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: clamp(1.4rem, 3vw, 2.5rem) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: #F4F1EC !important;
+  pointer-events: none !important;
+}
+
+.project-card__tag {
+  align-self: flex-start !important;
+  display: inline-flex !important;
+  width: fit-content !important;
+  padding: 0.45rem 0.8rem !important;
+  border: 1px solid rgba(244, 241, 236, 0.45) !important;
+  border-radius: 999px !important;
+  color: #F4F1EC !important;
+  background: rgba(13, 13, 13, 0.45) !important;
+  font-family: "Space Mono", monospace !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
+.project-card__client {
+  display: block !important;
+  color: #F4F1EC !important;
+  font-family: "Anton", sans-serif !important;
+  font-size: clamp(3rem, 7vw, 7rem) !important;
+  line-height: 0.88 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.03em !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.project-card__mission {
+  margin-top: 0.5rem !important;
+  color: #E83F6F !important;
+  font-family: "Anton", sans-serif !important;
+  font-size: clamp(1.1rem, 2.3vw, 2rem) !important;
+  line-height: 0.95 !important;
+  text-transform: uppercase !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.project-card__foot {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  margin-top: 1.2rem !important;
+}
+
+.project-card__tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.45rem !important;
+}
+
+.project-card__tags span {
+  color: #F4F1EC !important;
+  font-family: "Space Mono", monospace !important;
+  font-size: 0.7rem !important;
+  opacity: 0.85 !important;
+}
+
+.project-card__arrow {
+  display: grid !important;
+  place-items: center !important;
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 999px !important;
+  background: #F4F1EC !important;
+  color: #0D0D0D !important;
+  font-size: 1.5rem !important;
+  flex: 0 0 auto !important;
+}
+
+.project-card:hover .project-card__img {
+  opacity: 0.9 !important;
+  transform: scale(1.04) !important;
+}
+
+.project-card:hover .project-card__arrow {
+  background: #E83F6F !important;
+  color: #F4F1EC !important;
+}
+
+/* Si les animations reveal bloquent les cards */
+.project-card[data-reveal],
+.projects-grid [data-reveal] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
