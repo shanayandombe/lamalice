@@ -1,16 +1,16 @@
-title: "Reel produit"
-slug: "reel-produit-1"
-type: "Reel"
-client: "Zia Kürtös"
-short_description: "Contenu à compléter — mise en avant produit en format vertical."
-thumbnail: "/assets/images/uploads/placeholder-content.jpg"
-video: ""
-external_link: ""
+title: Réel court
+slug: reel-court-1
+type: Reel
+client: La Patanne
+short_description: Réel court pour La Patanne
+thumbnail: /assets/images/uploads/réel-meilleur-combo-couverture.jpg
+video: https://www.instagram.com/p/DaIDZOhMFiH/
+external_link: https://www.instagram.com/p/DaIDZOhMFiH/
 date: 2026-02-10
-category: "projet-client"
+category: projet-client
 tags:
-  - "Reel"
-  - "Produit"
+  - Reel
+  - Produit
 visible: true
 featured: true
-order: 2
+order: 1
