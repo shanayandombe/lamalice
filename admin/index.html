@@ -7,7 +7,10 @@
   <title>Administration — La Malice</title>
 </head>
 <body>
-  <!-- Inclusion du script Decap CMS (anciennement Netlify CMS) -->
+  <!-- Netlify Identity doit être chargé avant Decap CMS -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
