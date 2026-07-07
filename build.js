@@ -178,17 +178,48 @@ function parseYamlFile(filePath) {
 function readCollection(folderName) {
   const dirPath = path.join(CONTENT_DIR, folderName);
   ensureDir(dirPath);
-  const files = fs
-    .readdirSync(dirPath)
-    .filter((f) => f.endsWith(".yml") || f.endsWith(".yaml"));
+  const allFiles = fs.readdirSync(dirPath);
 
-  const items = files.map((file) => {
-    const data = parseYamlFile(path.join(dirPath, file));
+  const yamlFiles = allFiles.filter((f) => f.endsWith(".yml") || f.endsWith(".yaml"));
+
+  // Avertit (sans jamais faire planter le build) si des fichiers .md ou autres
+  // traînent encore dans un dossier de contenu — typiquement d'anciens
+  // contenus créés avant la configuration extension:"yml" / format:"yaml"
+  // dans admin/config.yml. Ces fichiers sont ignorés proprement.
+  const ignoredFiles = allFiles.filter(
+    (f) => !f.startsWith(".") && !f.endsWith(".yml") && !f.endsWith(".yaml")
+  );
+  if (ignoredFiles.length) {
+    console.warn(
+      `⚠️  content/${folderName}/ : ${ignoredFiles.length} fichier(s) ignoré(s) (format non YAML) : ${ignoredFiles.join(", ")}`
+    );
+    console.warn(
+      `   → Convertis-les en .yml (voir README, section "Migrer d'anciens contenus .md") pour qu'ils apparaissent sur le site.`
+    );
+  }
+
+  const items = [];
+  yamlFiles.forEach((file) => {
+    const filePath = path.join(dirPath, file);
+    let data;
+    try {
+      data = parseYamlFile(filePath);
+    } catch (err) {
+      // Un fichier YAML mal formé ne doit jamais faire planter tout le build :
+      // on l'ignore proprement et on prévient dans les logs.
+      console.warn(`⚠️  content/${folderName}/${file} : erreur de lecture YAML, fichier ignoré.`);
+      console.warn(`   → Détail : ${err.message}`);
+      return;
+    }
+    if (!data || typeof data !== "object") {
+      console.warn(`⚠️  content/${folderName}/${file} : contenu vide ou invalide, fichier ignoré.`);
+      return;
+    }
     if (!data.slug) {
       const base = data.title || data.name || data.client || file.replace(/\.ya?ml$/, "");
       data.slug = slugify(base);
     }
-    return data;
+    items.push(data);
   });
 
   items.sort((a, b) => {
@@ -209,7 +240,14 @@ function readSettingsFile(fileName, defaults) {
   if (!fs.existsSync(filePath)) {
     return defaults || {};
   }
-  const data = parseYamlFile(filePath);
+  let data;
+  try {
+    data = parseYamlFile(filePath);
+  } catch (err) {
+    console.warn(`⚠️  content/settings/${fileName} : erreur de lecture YAML, valeurs par défaut utilisées.`);
+    console.warn(`   → Détail : ${err.message}`);
+    return defaults || {};
+  }
   return Object.assign({}, defaults || {}, data);
 }
 
