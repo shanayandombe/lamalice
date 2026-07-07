@@ -94,6 +94,39 @@
   }
 
   // ---------------------------------------------------------------
+  // Normalisation défensive des champs CMS (visible / featured / order)
+  // ---------------------------------------------------------------
+  // Decap CMS écrit normalement des booléens/nombres YAML natifs, mais un
+  // champ édité à la main, un widget mal configuré ou un ancien contenu migré
+  // peut produire des chaînes ("true"/"false"), des 0/1, ou un "order" en
+  // texte. Ces helpers garantissent un comportement cohérent quel que soit
+  // le type reçu, pour ne jamais faire disparaître un projet par erreur.
+
+  function isVisible(item) {
+    const v = item && item.visible;
+    if (v === false || v === 0) return false;
+    if (typeof v === "string" && v.trim().toLowerCase() === "false") return false;
+    return true; // visible par défaut si absent, vide, true, "true", 1...
+  }
+
+  function isFeatured(item) {
+    const v = item && item.featured;
+    if (v === true || v === 1) return true;
+    if (typeof v === "string" && v.trim().toLowerCase() === "true") return true;
+    return false; // non mis en avant par défaut si absent, false, "false"...
+  }
+
+  function getOrder(item) {
+    const raw = item && item.order;
+    const n = typeof raw === "number" ? raw : parseFloat(raw);
+    return isNaN(n) ? 9999 : n;
+  }
+
+  function sortByOrder(list) {
+    return list.slice().sort((a, b) => getOrder(a) - getOrder(b));
+  }
+
+  // ---------------------------------------------------------------
   // Grain overlay (injecté une fois sur toutes les pages)
   // ---------------------------------------------------------------
 
@@ -339,7 +372,7 @@
     if (!grid) return;
 
     const filtersContainer = qs("[data-projects-filters]");
-    const visibleCategories = DATA.categories.filter((c) => c.visible !== false);
+    const visibleCategories = DATA.categories.filter((c) => isVisible(c));
 
     if (filtersContainer) {
       filtersContainer.innerHTML = "";
@@ -362,24 +395,39 @@
   }
 
   function paintProjects(grid) {
-    const items = DATA.projects.filter((p) => p.visible !== false);
+    // 1) On ne cache jamais un projet par défaut : seul visible === false (ou
+    //    équivalent) l'exclut. Un champ visible absent, vide ou mal typé
+    //    n'empêche jamais l'affichage.
+    const items = DATA.projects.filter((p) => isVisible(p));
+
+    // 2) Le filtre "Tous" (valeur "all") laisse passer tous les projets
+    //    visibles, quelle que soit leur catégorie (y compris une catégorie
+    //    manquante, vide, ou qui ne correspond à aucune catégorie connue).
     const filtered =
       activeProjectFilter === "all"
         ? items
         : items.filter((p) => p.category === activeProjectFilter);
 
+    // 3) Tri explicite par ordre croissant, en plus du tri déjà fait côté
+    //    build.js — filet de sécurité si l'ordre venait à changer côté data.
+    const sorted = sortByOrder(filtered);
+
     grid.innerHTML = "";
-    if (!filtered.length) {
+    if (!sorted.length) {
       grid.appendChild(emptyState("Projet à compléter — aucun projet dans cette catégorie pour le moment."));
       return;
     }
 
-    filtered.forEach((project) => grid.appendChild(projectCard(project)));
+    sorted.forEach((project) => grid.appendChild(projectCard(project)));
   }
 
   function categoryName(slug) {
+    // Une catégorie manquante, vide, masquée ou qui ne correspond à aucune
+    // catégorie connue ne doit jamais empêcher l'affichage du projet : on
+    // retombe sur un libellé neutre plutôt que d'afficher le slug brut.
+    if (!slug) return "";
     const cat = DATA.categories.find((c) => c.slug === slug);
-    return cat ? cat.name : slug;
+    return cat ? cat.name : "";
   }
 
   function filterButton(label, value, active) {
