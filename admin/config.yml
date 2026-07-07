@@ -17,6 +17,8 @@ collections:
     label: "Projets"
     label_singular: "Projet"
     folder: "content/projets"
+    extension: "yml"
+    format: "yaml"
     create: true
     delete: true
     slug: "{{fields.slug}}"
@@ -26,6 +28,7 @@ collections:
       - { label: "Entreprise / client", name: "client", widget: "string", hint: "Nom affiché en priorité sur la carte projet." }
       - { label: "Titre du projet", name: "title", widget: "string" }
       - { label: "Slug (URL)", name: "slug", widget: "string", hint: "Utilisé dans projet.html?slug=..." }
+
       - label: "Catégorie de projet"
         name: "category"
         widget: "relation"
@@ -34,7 +37,9 @@ collections:
         value_field: "slug"
         display_fields: ["name"]
         hint: "Choisis une catégorie créée dans 'Catégories de projets'."
+
       - { label: "Type de mission (affiché sur la carte)", name: "mission_type", widget: "string" }
+
       - label: "Statut"
         name: "status"
         widget: "select"
@@ -44,6 +49,7 @@ collections:
           - { label: "Projet personnel", value: "projet-personnel" }
           - { label: "Archive", value: "archive" }
         default: "termine"
+
       - label: "Type de projet"
         name: "project_type"
         widget: "select"
@@ -55,6 +61,7 @@ collections:
           - { label: "Événementiel", value: "evenementiel" }
           - { label: "Identité / direction artistique", value: "direction-artistique" }
           - { label: "Projet personnel", value: "projet-personnel" }
+
       - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Rôle", name: "role", widget: "string", required: false }
       - { label: "Description courte", name: "short_description", widget: "text" }
@@ -62,20 +69,24 @@ collections:
       - { label: "Contexte", name: "context", widget: "text", required: false }
       - { label: "Mission", name: "project_mission", widget: "text", required: false }
       - { label: "Objectifs", name: "objectives", widget: "text", required: false }
+
       - label: "Services réalisés"
         name: "services_done"
         widget: "list"
         required: false
         field: { label: "Service", name: "service", widget: "string" }
+
       - label: "Tags"
         name: "tags"
         widget: "list"
         required: false
         field: { label: "Tag", name: "tag", widget: "string" }
+
       - { label: "Contenus créés (texte libre)", name: "created_content", widget: "text", required: false }
       - { label: "Résultats ou intention", name: "results", widget: "text", required: false }
       - { label: "Coulisses", name: "backstage", widget: "text", required: false }
       - { label: "Image principale", name: "main_image", widget: "image" }
+
       - label: "Galerie d'images"
         name: "gallery"
         widget: "list"
@@ -83,6 +94,7 @@ collections:
         fields:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Texte alternatif", name: "alt", widget: "string", required: false }
+
       - { label: "Vidéo / lien Reel-TikTok-Instagram", name: "video_link", widget: "string", required: false }
       - { label: "Lien externe (site du client)", name: "external_link", widget: "string", required: false }
       - { label: "Mis en avant sur la home", name: "featured", widget: "boolean", default: false }
@@ -96,6 +108,8 @@ collections:
     label: "Catégories de projets"
     label_singular: "Catégorie"
     folder: "content/categories-projets"
+    extension: "yml"
+    format: "yaml"
     create: true
     delete: true
     slug: "{{fields.slug}}"
@@ -103,7 +117,7 @@ collections:
     sortable_fields: ["order", "name"]
     fields:
       - { label: "Nom de la catégorie", name: "name", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string", hint: "Identifiant unique, sans espace ni accent (ex: sites-web)." }
+      - { label: "Slug", name: "slug", widget: "string", hint: "Identifiant unique, sans espace ni accent, ex: sites-web." }
       - { label: "Description courte", name: "description", widget: "text", required: false }
       - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1, value_type: "int" }
       - { label: "Visible dans les filtres", name: "visible", widget: "boolean", default: true }
@@ -115,6 +129,8 @@ collections:
     label: "Contenus créés"
     label_singular: "Contenu"
     folder: "content/contenus"
+    extension: "yml"
+    format: "yaml"
     create: true
     delete: true
     slug: "{{fields.slug}}"
@@ -123,6 +139,7 @@ collections:
     fields:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
+
       - label: "Type de contenu"
         name: "type"
         widget: "select"
@@ -138,6 +155,7 @@ collections:
           - "Montage vidéo"
           - "Site web"
           - "Visuel digital"
+
       - { label: "Client ou projet lié", name: "client", widget: "string", required: false }
       - { label: "Description courte", name: "short_description", widget: "text", required: false }
       - { label: "Image ou miniature", name: "thumbnail", widget: "image" }
@@ -145,11 +163,13 @@ collections:
       - { label: "Lien Instagram / TikTok / site (optionnel)", name: "external_link", widget: "string", required: false }
       - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Catégorie", name: "category", widget: "string", required: false, hint: "Ex : coulisses, projet-client, evenement, archive." }
+
       - label: "Tags"
         name: "tags"
         widget: "list"
         required: false
         field: { label: "Tag", name: "tag", widget: "string" }
+
       - { label: "Visible", name: "visible", widget: "boolean", default: true }
       - { label: "Mis en avant", name: "featured", widget: "boolean", default: false }
       - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1, value_type: "int" }
@@ -161,6 +181,8 @@ collections:
     label: "Galerie"
     label_singular: "Image"
     folder: "content/galerie"
+    extension: "yml"
+    format: "yaml"
     create: true
     delete: true
     summary: "{{title}}"
@@ -170,6 +192,7 @@ collections:
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Texte alternatif (SEO)", name: "alt", widget: "string" }
       - { label: "Légende", name: "caption", widget: "string", required: false }
+
       - label: "Catégorie"
         name: "category"
         widget: "select"
@@ -182,6 +205,7 @@ collections:
           - { label: "Site web", value: "site-web" }
           - { label: "Événement", value: "evenement" }
           - { label: "Archive", value: "archive" }
+
       - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Visible", name: "visible", widget: "boolean", default: true }
       - { label: "Mis en avant (home / à propos)", name: "featured", widget: "boolean", default: false }
@@ -194,6 +218,8 @@ collections:
     label: "Services"
     label_singular: "Service"
     folder: "content/services"
+    extension: "yml"
+    format: "yaml"
     create: true
     delete: true
     slug: "{{fields.slug}}"
@@ -206,11 +232,13 @@ collections:
       - { label: "Description courte", name: "short_description", widget: "text" }
       - { label: "Description détaillée", name: "detailed_description", widget: "text", required: false }
       - { label: "Phrase d'accroche", name: "tagline", widget: "string", required: false }
+
       - label: "Prestations incluses"
         name: "included"
         widget: "list"
         required: false
         field: { label: "Prestation", name: "item", widget: "string" }
+
       - { label: "Prix indicatif (optionnel)", name: "price_indicative", widget: "string", required: false }
       - { label: "Texte du bouton", name: "button_text", widget: "string", default: "Travailler ensemble" }
       - { label: "Lien du bouton", name: "button_link", widget: "string", default: "contact.html" }
@@ -226,6 +254,8 @@ collections:
     label: "Avis"
     label_singular: "Avis"
     folder: "content/avis"
+    extension: "yml"
+    format: "yaml"
     create: true
     delete: true
     summary: "{{name}} — {{project}}"
@@ -247,6 +277,8 @@ collections:
     label: "FAQ"
     label_singular: "Question"
     folder: "content/faq"
+    extension: "yml"
+    format: "yaml"
     create: true
     delete: true
     summary: "{{question}}"
@@ -259,7 +291,7 @@ collections:
       - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1, value_type: "int" }
 
   # =========================================================
-  # PARAMÈTRES DU SITE (fichier unique)
+  # PARAMÈTRES DU SITE
   # =========================================================
   - name: "settings"
     label: "Paramètres du site"
@@ -307,6 +339,7 @@ collections:
           - { label: "Titre — instinct & structure", name: "structure_title", widget: "string", required: false }
           - { label: "Texte — instinct & structure", name: "structure_text", widget: "text", required: false }
           - { label: "Image portrait principale", name: "portrait_image", widget: "image" }
+
           - label: "Galerie d'images artistiques"
             name: "gallery_images"
             widget: "list"
@@ -314,7 +347,9 @@ collections:
             fields:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Texte alternatif", name: "alt", widget: "string", required: false }
+
           - { label: "Titre — Ce que la danse m'a appris", name: "learned_title", widget: "string", required: false }
+
           - label: "Blocs — Ce que la danse m'a appris"
             name: "learned_blocks"
             widget: "list"
@@ -322,6 +357,7 @@ collections:
             fields:
               - { label: "Titre du bloc", name: "title", widget: "string" }
               - { label: "Texte du bloc", name: "text", widget: "text" }
+
           - label: "Timeline artistique & professionnelle"
             name: "timeline"
             widget: "list"
@@ -329,6 +365,7 @@ collections:
             fields:
               - { label: "Libellé", name: "label", widget: "string" }
               - { label: "Tag (ex: DANSE / PRO)", name: "tag", widget: "string", required: false }
+
           - { label: "Afficher la section danse", name: "show_dance_section", widget: "boolean", default: true }
           - { label: "Afficher la section parcours pro", name: "show_career_section", widget: "boolean", default: true }
           - { label: "Afficher la timeline", name: "show_timeline", widget: "boolean", default: true }
